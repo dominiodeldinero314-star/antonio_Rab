@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ANTONIO RABADÁN | Arquitectura Contemporánea</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&amp;family=Metrophobic&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary": "#5d5f5f",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "on-secondary-fixed-variant": "#454747",
+                        "tertiary-fixed-dim": "#cac6c3",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed": "#e6e1df",
+                        "surface-container-highest": "#e2e2e2",
+                        "tertiary-container": "#1d1b1a",
+                        "surface-bright": "#f9f9f9",
+                        "surface-container": "#eeeeee",
+                        "surface-container-low": "#f3f3f3",
+                        "on-surface": "#1a1c1c",
+                        "surface-dim": "#dadada",
+                        "surface-variant": "#e2e2e2",
+                        "secondary-fixed": "#e2e2e2",
+                        "on-primary-fixed-variant": "#474646",
+                        "tertiary": "#000000",
+                        "primary-fixed-dim": "#c9c6c5",
+                        "outline": "#747878",
+                        "inverse-surface": "#2f3131",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "secondary-container": "#e2e2e2",
+                        "inverse-on-surface": "#f1f1f1",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed-variant": "#484645",
+                        "surface-container-high": "#e8e8e8",
+                        "background": "#f9f9f9",
+                        "surface-tint": "#5f5e5e",
+                        "outline-variant": "#c4c7c7",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed-dim": "#c6c6c6",
+                        "surface": "#f9f9f9",
+                        "on-tertiary-container": "#868381",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed": "#1c1b1b",
+                        "on-primary-container": "#858383",
+                        "primary-container": "#1c1b1b",
+                        "on-tertiary-fixed": "#1d1b1a",
+                        "primary": "#000000",
+                        "primary-fixed": "#e5e2e1",
+                        "on-background": "#1a1c1c",
+                        "inverse-primary": "#c9c6c5",
+                        "on-surface-variant": "#444748",
+                        "on-secondary-container": "#636465",
+                        "error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "80px",
+                        "unit": "8px",
+                        "section-gap": "160px",
+                        "container-max": "1440px",
+                        "gutter": "32px",
+                        "margin-mobile": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Bodoni Moda"],
+                        "display-xl-mobile": ["Bodoni Moda"],
+                        "body-lg": ["Metrophobic"],
+                        "nav-link": ["Metrophobic"],
+                        "body-md": ["Metrophobic"],
+                        "display-xl": ["Bodoni Moda"],
+                        "label-caps": ["Metrophobic"],
+                        "headline-lg-mobile": ["Bodoni Moda"],
+                        "headline-lg": ["Bodoni Moda"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "400"}],
+                        "display-xl-mobile": ["48px", {"lineHeight": "52px", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "32px", "letterSpacing": "0.03em", "fontWeight": "400"}],
+                        "nav-link": ["14px", {"lineHeight": "20px", "letterSpacing": "0.1em", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "28px", "letterSpacing": "0.02em", "fontWeight": "400"}],
+                        "display-xl": ["80px", {"lineHeight": "90px", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.2em", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "400"}],
+                        "headline-lg": ["48px", {"lineHeight": "56px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+        }
+        .ken-burns {
+            animation: kenburns 20s infinite alternate linear;
+        }
+        @keyframes kenburns {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+        .nav-underline {
+            position: relative;
+        }
+        .nav-underline::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -4px;
+            left: 50%;
+            background-color: currentColor;
+            transition: all 0.5s ease-in-out;
+            transform: translateX(-50%);
+        }
+        .nav-underline:hover::after {
+            width: 100%;
+        }
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease-out;
+        }
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md border-b border-outline-variant/30 transition-all duration-500 ease-in-out h-20">
+<div class="flex justify-between items-center h-full px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<a class="font-headline-md text-headline-md tracking-tighter text-primary" href="#">ANTONIO RABADÁN</a>
+<div class="hidden md:flex space-x-10">
+<a class="font-nav-link text-nav-link tracking-[0.15em] text-secondary hover:text-primary transition-all duration-500 nav-underline" href="#proyectos">PROYECTOS</a>
+<a class="font-nav-link text-nav-link tracking-[0.15em] text-secondary hover:text-primary transition-all duration-500 nav-underline" href="#servicios">SERVICIOS</a>
+<a class="font-nav-link text-nav-link tracking-[0.15em] text-secondary hover:text-primary transition-all duration-500 nav-underline" href="#metodologia">METODOLOGÍA</a>
+<a class="font-nav-link text-nav-link tracking-[0.15em] text-secondary hover:text-primary transition-all duration-500 nav-underline" href="#contacto">CONTACTO</a>
+</div>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<!-- 1. HERO PRINCIPAL -->
+<section class="relative h-screen w-full overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center ken-burns" data-alt="A cinematic, high-angle photograph of a breathtaking minimalist luxury villa overlooking the Mediterranean Sea at dusk. The architecture features clean white horizontal lines and warm interior lighting glowing through floor-to-ceiling glass walls. An infinity pool reflects the soft orange and purple hues of the twilight sky. The mood is sophisticated, serene, and ultra-premium architecture." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBta3fF7xikR51w6vENZ7vXYzJEwYi5PslYpmax5PCgl5CIN2WrX16JmGrQTStSA5L4_h9-zunDyFF-gJgxJ4B3TgS7gHpBndCNVRwmoRMNPYMySo5nH0k4vUNd95w6M7xFin-6kSoCJ_rp6QVytmO9uvcIaJLIAY1P-WL-dwKSZcBkDE9p9wlO1-JL3L0o-9ypuLexAozZaae26nP2pw0R_d9OCZGVbExAb-7kHwymiCk1G7NleMcr91hP3GJc3dTd0R8ocLBmzVM')"></div>
+<div class="absolute inset-0 bg-black/20"></div>
+</div>
+<div class="relative z-10 flex flex-col justify-center items-start h-full px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<h1 class="font-display-xl-mobile md:font-display-xl text-display-xl-mobile md:text-display-xl text-white max-w-4xl mb-6">
+                Arquitectura que transforma espacios en experiencias únicas.
+            </h1>
+<p class="font-body-lg text-body-lg text-white/90 max-w-2xl mb-12">
+                Proyectos residenciales, interiorismo y arquitectura contemporánea en Murcia, Madrid y Barcelona.
+            </p>
+<div class="flex flex-col sm:flex-row gap-6">
+<a class="px-10 py-4 border border-white text-white font-label-caps text-label-caps tracking-[0.15em] hover:bg-white hover:text-primary transition-all duration-500 text-center uppercase" href="#contacto">
+                    Solicitar proyecto
+                </a>
+<a class="px-10 py-4 border border-white/30 text-white font-label-caps text-label-caps tracking-[0.15em] hover:border-white transition-all duration-500 text-center uppercase" href="#proyectos">
+                    Ver proyectos
+                </a>
+</div>
+</div>
+</section>
+<!-- 2. PRESENTACIÓN -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-7 fade-in-up">
+<span class="font-label-caps text-label-caps text-secondary mb-4 block">FILOSOFÍA &amp; ESTUDIO</span>
+<h2 class="font-headline-lg text-headline-lg mb-8">Elevando lo cotidiano a través de la precisión arquitectónica.</h2>
+<p class="font-body-lg text-body-lg text-secondary mb-12">
+                    Liderado por Antonio Rabadán, nuestro estudio se dedica a la creación de espacios que trascienden lo funcional. Creemos en un minimalismo cálido, donde la luz natural, los materiales nobles y la integración con el entorno dictan el ritmo de cada proyecto. Nuestra misión es materializar visiones exclusivas con una ejecución técnica impecable.
+                </p>
+</div>
+<div class="md:col-span-5 flex flex-col gap-12 md:pl-16 border-l border-outline-variant/30 fade-in-up" style="transition-delay: 200ms;">
+<div>
+<span class="font-display-xl-mobile text-display-xl-mobile text-primary block">15+</span>
+<span class="font-label-caps text-label-caps text-secondary uppercase">Años de experiencia</span>
+</div>
+<div>
+<span class="font-display-xl-mobile text-display-xl-mobile text-primary block">100+</span>
+<span class="font-label-caps text-label-caps text-secondary uppercase">Proyectos realizados</span>
+</div>
+<div>
+<span class="font-headline-md text-headline-md text-primary block">Madrid, Murcia, Barcelona</span>
+<span class="font-label-caps text-label-caps text-secondary uppercase">Presencia principal</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. PROYECTOS DESTACADOS -->
+<section class="bg-surface-container-low py-section-gap overflow-hidden" id="proyectos">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-16 flex justify-between items-end">
+<div>
+<span class="font-label-caps text-label-caps text-secondary mb-4 block">SELECCIÓN</span>
+<h2 class="font-headline-lg text-headline-lg">Proyectos destacados</h2>
+</div>
+<a class="hidden md:block font-label-caps text-label-caps text-primary border-b border-primary pb-1 hover:text-secondary hover:border-secondary transition-colors" href="#">VER TODOS LOS PROYECTOS</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-outline-variant/20">
+<!-- Project 1 -->
+<div class="group relative aspect-[4/3] overflow-hidden bg-surface fade-in-up">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-1000 group-hover:scale-105" data-alt="An expansive, light-filled minimalist living room with massive floor-to-ceiling glass windows showing a coastal horizon. The interior features a neutral-toned modular linen sofa, a sculptural stone coffee table, and a large abstract sculpture. Natural light floods the space, highlighting the texture of the light oak flooring and beige plaster walls. The style is quiet luxury and contemporary residential design." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAm4NZSd3xhmUZ75CcTOMu2_ovaw3gAF_xC1a5SJNCeADfoZ4vGwJvUxaG_hHjX5yD5lJgDlUdNgKIlDhL-jrwIrDAajT9pn5uqlc1N9FgTvvCTPQO2mqzTZRF8CGtd5wEIgsWXXeZVV385WW5VcO05S3GBrS_9t_VmZC-cO82oXoCaRaNjVmAtQKpNOkxKmpTlcPQgDfEo3E1ll7n7USorsNqY2HGxvENf7MgWUScSZqV7JUogSzpyaqvaDmZBDMppDPomQFeokcI')"></div>
+<div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-500"></div>
+<div class="absolute bottom-10 left-10 text-white opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
+<p class="font-label-caps text-label-caps mb-2">VIVIENDA UNIFAMILIAR | MURCIA</p>
+<h3 class="font-headline-md text-headline-md">Casa Mar Azul</h3>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="group relative aspect-[4/3] overflow-hidden bg-surface fade-in-up" style="transition-delay: 200ms;">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-1000 group-hover:scale-105" data-alt="A modern architectural facade featuring cantilevered concrete planes and natural stone cladding. The structure is integrated into a rocky hillside, with vertical wooden slats providing privacy and soft shadows. The lighting is low-key afternoon sun, casting long architectural shadows that emphasize the geometry of the building. The palette is dominated by raw concrete, warm wood, and gray stone." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDViVYWLSHLkk7Fax6Qigsh3KEAko-uGINP4fDCJ3TB5-fZSraVacKbELRCL-7T2OjrowqfqHO17K1y-oGx0J_j4s5ISRP7SqGyDconoo4f7yUBbwwN6Q7dn3SwXBUUlHfLdvBM2WGb3oH2UoOz4OAzxQQPogfU4iEjl_79cnbzZ_GZOkDrAIMohckL09COvgMvZHT3qQplSuMkn6jtYQnqKAedc63fCTjtbN2c01LriIzu0LCYZqXNuSUffEQsnNUtGzeyTM7vDeM')"></div>
+<div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-500"></div>
+<div class="absolute bottom-10 left-10 text-white opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
+<p class="font-label-caps text-label-caps mb-2">APARTAMENTO LUJO | MADRID</p>
+<h3 class="font-headline-md text-headline-md">Ático Castellana</h3>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. SERVICIOS -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto" id="servicios">
+<div class="text-center mb-20 fade-in-up">
+<span class="font-label-caps text-label-caps text-secondary mb-4 block">SERVICIOS</span>
+<h2 class="font-headline-lg text-headline-lg">Soluciones integrales de diseño</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Service 1 -->
+<div class="p-10 border border-outline-variant hover:border-primary transition-all duration-500 group fade-in-up">
+<span class="material-symbols-outlined text-4xl mb-8 group-hover:scale-110 transition-transform">architecture</span>
+<h3 class="font-headline-md text-headline-md mb-4">Arquitectura Residencial</h3>
+<p class="font-body-md text-body-md text-secondary">Proyectos desde cero, diseñando hogares que respiran con su entorno y responden a cada necesidad vital.</p>
+</div>
+<!-- Service 2 -->
+<div class="p-10 border border-outline-variant hover:border-primary transition-all duration-500 group fade-in-up" style="transition-delay: 150ms;">
+<span class="material-symbols-outlined text-4xl mb-8 group-hover:scale-110 transition-transform">diamond</span>
+<h3 class="font-headline-md text-headline-md mb-4">Viviendas de Lujo</h3>
+<p class="font-body-md text-body-md text-secondary">Exclusividad técnica y estética para clientes que buscan lo excepcional en cada detalle constructivo.</p>
+</div>
+<!-- Service 3 -->
+<div class="p-10 border border-outline-variant hover:border-primary transition-all duration-500 group fade-in-up" style="transition-delay: 300ms;">
+<span class="material-symbols-outlined text-4xl mb-8 group-hover:scale-110 transition-transform">chair</span>
+<h3 class="font-headline-md text-headline-md mb-4">Interiorismo</h3>
+<p class="font-body-md text-body-md text-secondary">La culminación del espacio a través del mobiliario, la iluminación y la textura. Belleza funcional.</p>
+</div>
+</div>
+</section>
+<!-- 5. METODOLOGÍA -->
+<section class="bg-primary text-on-primary py-section-gap" id="metodologia">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="mb-20 fade-in-up">
+<span class="font-label-caps text-label-caps text-primary-fixed mb-4 block">EL PROCESO</span>
+<h2 class="font-headline-lg text-headline-lg">De la idea a la realidad</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-5 gap-12 relative">
+<!-- Step 1 -->
+<div class="fade-in-up">
+<span class="font-display-xl text-primary-fixed/20 block mb-4">01</span>
+<h4 class="font-headline-md text-headline-md mb-4">Reunión</h4>
+<p class="font-body-md text-on-primary/70">Escuchamos tus necesidades, sueños y el propósito del espacio para trazar el punto de partida.</p>
+</div>
+<!-- Step 2 -->
+<div class="fade-in-up" style="transition-delay: 100ms;">
+<span class="font-display-xl text-primary-fixed/20 block mb-4">02</span>
+<h4 class="font-headline-md text-headline-md mb-4">Concepto</h4>
+<h4 class="font-body-md text-on-primary/70">Desarrollo de las primeras líneas, volúmenes y la esencia arquitectónica del proyecto.</h4>
+</div>
+<!-- Step 3 -->
+<div class="fade-in-up" style="transition-delay: 200ms;">
+<span class="font-display-xl text-primary-fixed/20 block mb-4">03</span>
+<h4 class="font-headline-md text-headline-md mb-4">Técnico</h4>
+<p class="font-body-md text-on-primary/70">Precisión absoluta en planos, licencias y especificaciones para garantizar la viabilidad total.</p>
+</div>
+<!-- Step 4 -->
+<div class="fade-in-up" style="transition-delay: 300ms;">
+<span class="font-display-xl text-primary-fixed/20 block mb-4">04</span>
+<h4 class="font-headline-md text-headline-md mb-4">Ejecución</h4>
+<p class="font-body-md text-on-primary/70">Dirección de obra exhaustiva. Cuidamos que cada milímetro construido sea fiel al diseño.</p>
+</div>
+<!-- Step 5 -->
+<div class="fade-in-up" style="transition-delay: 400ms;">
+<span class="font-display-xl text-primary-fixed/20 block mb-4">05</span>
+<h4 class="font-headline-md text-headline-md mb-4">Entrega</h4>
+<p class="font-body-md text-on-primary/70">El momento final donde el espacio cobra vida y el cliente comienza su nueva experiencia.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. PRESENCIA NACIONAL -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto overflow-hidden">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter items-center">
+<div class="fade-in-up">
+<span class="font-label-caps text-label-caps text-secondary mb-4 block">UBICACIÓN</span>
+<h2 class="font-headline-lg text-headline-lg mb-8">Desarrollamos proyectos en toda España.</h2>
+<p class="font-body-lg text-body-lg text-secondary mb-8">
+                    Aunque nuestra base se encuentra en Murcia, nuestra visión no tiene fronteras. Hemos materializado proyectos residenciales y comerciales en los entornos más exigentes de Madrid y Barcelona, adaptándonos siempre al clima, la luz y la cultura local.
+                </p>
+<div class="flex gap-8">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-primary">MURCIA</span>
+<span class="font-body-md text-secondary">Sede Central</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-primary">MADRID</span>
+<span class="font-body-md text-secondary">Proyectos Luxury</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-primary">BARCELONA</span>
+<span class="font-body-md text-secondary">Interiorismo Elite</span>
+</div>
+</div>
+</div>
+<div class="relative h-[500px] bg-surface-container-high rounded-sm overflow-hidden fade-in-up" style="transition-delay: 200ms;">
+<div class="w-full h-full grayscale hover:grayscale-0 transition-all duration-700 bg-cover bg-center" data-alt="A minimalist, stylized map of Spain with clean geometric markers on Madrid, Barcelona, and Murcia. The map has an architectural blueprint aesthetic, with fine lines and muted gray tones. The overall look is professional, modern, and aligned with a high-end design firm's brand identity." data-location="Spain" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDs3r5Go5kIALXVpOw58HSBqi-vHuHqjlzBO0-wcYos0dW9NoMUCFddpVs1daTZ60-wpv9Tfq85ML4COQY2d4rJjjZFZH5LWG3DPWMlxMoD5HbwAbOoZ2l3_94qsH21y489tXh2NWjTgznUQyj51zCuguauFoCUftbavjgrreq4alUklY8KcfndTihkenvtqhWfLx0cYNuUanZhiXsRYdRgYm1OGljQKUQsK7n2T8S148-JJf3FuOl9Rlb9ExFEO5NDLokjG-PaOhc')"></div>
+</div>
+</div>
+</section>
+<!-- 7. CTA & CONTACTO -->
+<section class="py-section-gap bg-surface-container overflow-hidden" id="contacto">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-5 fade-in-up">
+<h2 class="font-headline-lg text-headline-lg mb-8">¿Hablamos sobre tu próximo proyecto?</h2>
+<p class="font-body-lg text-body-lg text-secondary mb-12">Cuéntanos tu visión. Estamos listos para diseñar el espacio que siempre has imaginado.</p>
+<div class="space-y-6">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined">mail</span>
+<span class="font-body-md">estudio@antoniorabadan.com</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined">call</span>
+<span class="font-body-md">+34 968 000 000</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined">location_on</span>
+<span class="font-body-md">Calle Mayor 1, 30001 Murcia</span>
+</div>
+</div>
+</div>
+<div class="md:col-span-7 bg-surface p-10 md:p-16 border border-outline-variant fade-in-up" style="transition-delay: 200ms;">
+<div class="hidden mb-8 p-4 border font-body-md" id="form-status"></div>
+<form action="/api/contact" class="space-y-8" method="POST">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="relative">
+<label class="font-label-caps text-label-caps text-secondary mb-2 block">NOMBRE</label>
+<input class="w-full bg-transparent border-0 border-b border-outline focus:ring-0 focus:border-primary py-2 transition-colors" name="nombre" placeholder="Tu nombre completo" required="" type="text"/>
+</div>
+<div class="relative">
+<label class="font-label-caps text-label-caps text-secondary mb-2 block">EMAIL</label>
+<input class="w-full bg-transparent border-0 border-b border-outline focus:ring-0 focus:border-primary py-2 transition-colors" name="email" placeholder="email@ejemplo.com" required="" type="email"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="relative">
+<label class="font-label-caps text-label-caps text-secondary mb-2 block">CIUDAD</label>
+<input class="w-full bg-transparent border-0 border-b border-outline focus:ring-0 focus:border-primary py-2 transition-colors" name="ciudad" placeholder="Murcia, Madrid..." type="text"/>
+</div>
+<div class="relative">
+<label class="font-label-caps text-label-caps text-secondary mb-2 block">PRESUPUESTO ESTIMADO</label>
+<select class="w-full bg-transparent border-0 border-b border-outline focus:ring-0 focus:border-primary py-2 transition-colors" name="presupuesto">
+<option>+100.000€</option>
+<option>+300.000€</option>
+<option>+500.000€</option>
+<option>Proyectos especiales</option>
+</select>
+</div>
+</div>
+<div class="relative">
+<label class="font-label-caps text-label-caps text-secondary mb-2 block">MENSAJE</label>
+<textarea class="w-full bg-transparent border-0 border-b border-outline focus:ring-0 focus:border-primary py-2 transition-colors" name="mensaje" placeholder="Cuéntanos un poco sobre tu idea..." required="" rows="4"></textarea>
+</div>
+<button class="w-full py-5 bg-primary text-on-primary font-label-caps text-label-caps tracking-[0.2em] hover:bg-secondary transition-all duration-500 uppercase" type="submit">
+                            Enviar consulta
+                        </button>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface border-t border-outline-variant py-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-20">
+<div class="md:col-span-6">
+<h3 class="font-headline-lg text-headline-lg text-primary mb-6">ANTONIO RABADÁN</h3>
+<p class="font-body-md text-secondary max-w-sm">Estudio de arquitectura contemporánea enfocado en la excelencia y el diseño atemporal.</p>
+</div>
+<div class="md:col-span-2">
+<h4 class="font-label-caps text-label-caps mb-6">EXPLORAR</h4>
+<div class="flex flex-col space-y-4">
+<a class="font-nav-link text-nav-link text-secondary hover:text-primary transition-colors" href="#proyectos">PROYECTOS</a>
+<a class="font-nav-link text-nav-link text-secondary hover:text-primary transition-colors" href="#servicios">SERVICIOS</a>
+<a class="font-nav-link text-nav-link text-secondary hover:text-primary transition-colors" href="#metodologia">METODOLOGÍA</a>
+<a class="font-nav-link text-nav-link text-secondary hover:text-primary transition-colors" href="#contacto">CONTACTO</a>
+</div>
+</div>
+<div class="md:col-span-2">
+<h4 class="font-label-caps text-label-caps mb-6">SÍGUENOS</h4>
+<div class="flex flex-col space-y-4">
+<a class="font-nav-link text-nav-link text-secondary hover:text-primary transition-colors" href="#">INSTAGRAM</a>
+<a class="font-nav-link text-nav-link text-secondary hover:text-primary transition-colors" href="#">LINKEDIN</a>
+<a class="font-nav-link text-nav-link text-secondary hover:text-primary transition-colors" href="#">PINTEREST</a>
+</div>
+</div>
+<div class="md:col-span-2">
+<h4 class="font-label-caps text-label-caps mb-6">LEGAL</h4>
+<div class="flex flex-col space-y-4">
+<a class="font-nav-link text-nav-link text-secondary hover:text-primary transition-colors" href="#">PRIVACY POLICY</a>
+<a class="font-nav-link text-nav-link text-secondary hover:text-primary transition-colors" href="#">COOKIES</a>
+</div>
+</div>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-center pt-10 border-t border-outline-variant/30">
+<p class="font-label-caps text-label-caps text-secondary">© 2024 ANTONIO RABADÁN ARQUITECTURA. ALL RIGHTS RESERVED.</p>
+<div class="flex gap-4 mt-4 md:mt-0">
+<span class="material-symbols-outlined text-secondary hover:text-primary transition-colors cursor-pointer">arrow_upward</span>
+</div>
+</div>
+</footer>
+<script>
+        // Scroll Animation Logic
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
+
+        // Mensaje de éxito/error tras enviar el formulario de contacto
+        const formStatus = document.getElementById('form-status');
+        const contactoParam = new URLSearchParams(window.location.search).get('contacto');
+        if (formStatus && contactoParam) {
+            const ok = contactoParam === 'ok';
+            formStatus.textContent = ok
+                ? 'Gracias por tu mensaje. Te responderemos lo antes posible.'
+                : 'No se ha podido enviar el mensaje. Inténtalo de nuevo o escríbenos directamente por email.';
+            formStatus.classList.remove('hidden');
+            formStatus.classList.add(ok ? 'border-primary' : 'border-error', ok ? 'text-primary' : 'text-error');
+            window.history.replaceState({}, document.title, window.location.pathname + '#contacto');
+        }
+
+        // Smooth parallax for hero
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.ken-burns');
+            if (hero) {
+                hero.style.transform = `translateY(${scrolled * 0.3}px) scale(${1 + scrolled * 0.0001})`;
+            }
+        });
+    </script>
+</body></html>
