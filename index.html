@@ -88,14 +88,14 @@
                         "headline-lg": ["Bodoni Moda"]
                     },
                     "fontSize": {
-                        "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "400"}],
-                        "display-xl-mobile": ["48px", {"lineHeight": "52px", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+                        "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "500"}],
+                        "display-xl-mobile": ["44px", {"lineHeight": "50px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
                         "body-lg": ["18px", {"lineHeight": "32px", "letterSpacing": "0.03em", "fontWeight": "400"}],
-                        "nav-link": ["14px", {"lineHeight": "20px", "letterSpacing": "0.1em", "fontWeight": "400"}],
+                        "nav-link": ["15px", {"lineHeight": "22px", "letterSpacing": "0.08em", "fontWeight": "400"}],
                         "body-md": ["16px", {"lineHeight": "28px", "letterSpacing": "0.02em", "fontWeight": "400"}],
                         "display-xl": ["80px", {"lineHeight": "90px", "letterSpacing": "-0.02em", "fontWeight": "400"}],
-                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.2em", "fontWeight": "400"}],
-                        "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "400"}],
+                        "label-caps": ["13px", {"lineHeight": "18px", "letterSpacing": "0.14em", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["30px", {"lineHeight": "36px", "fontWeight": "600"}],
                         "headline-lg": ["48px", {"lineHeight": "56px", "fontWeight": "400"}]
                     }
                 },
@@ -103,6 +103,9 @@
         }
     </script>
 <style>
+        h1, h2, h3, h4 {
+            font-optical-sizing: auto;
+        }
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
         }
@@ -147,34 +150,47 @@
 <div class="flex justify-between items-center h-full px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
 <a class="font-headline-md text-headline-md tracking-tighter text-primary" href="#">ANTONIO RABADÁN</a>
 <div class="hidden md:flex space-x-10">
-<a class="font-nav-link text-nav-link tracking-[0.15em] text-secondary hover:text-primary transition-all duration-500 nav-underline" href="#proyectos">PROYECTOS</a>
-<a class="font-nav-link text-nav-link tracking-[0.15em] text-secondary hover:text-primary transition-all duration-500 nav-underline" href="#servicios">SERVICIOS</a>
-<a class="font-nav-link text-nav-link tracking-[0.15em] text-secondary hover:text-primary transition-all duration-500 nav-underline" href="#metodologia">METODOLOGÍA</a>
-<a class="font-nav-link text-nav-link tracking-[0.15em] text-secondary hover:text-primary transition-all duration-500 nav-underline" href="#contacto">CONTACTO</a>
+<a class="font-nav-link text-nav-link text-secondary hover:text-primary transition-all duration-500 nav-underline" href="#proyectos">PROYECTOS</a>
+<a class="font-nav-link text-nav-link text-secondary hover:text-primary transition-all duration-500 nav-underline" href="#servicios">SERVICIOS</a>
+<a class="font-nav-link text-nav-link text-secondary hover:text-primary transition-all duration-500 nav-underline" href="#metodologia">METODOLOGÍA</a>
+<a class="font-nav-link text-nav-link text-secondary hover:text-primary transition-all duration-500 nav-underline" href="#contacto">CONTACTO</a>
 </div>
-<button class="md:hidden text-primary">
-<span class="material-symbols-outlined">menu</span>
+<button aria-controls="mobile-menu" aria-expanded="false" aria-label="Abrir menú" class="md:hidden text-primary" id="menu-toggle">
+<span class="material-symbols-outlined" id="menu-icon">menu</span>
 </button>
 </div>
 </nav>
+<div class="hidden md:!hidden fixed inset-0 z-40 bg-surface" id="mobile-menu">
+<div class="flex flex-col h-full px-margin-mobile pt-28 pb-12">
+<nav class="flex flex-col">
+<a class="font-headline-md text-headline-md text-primary border-b border-outline-variant/30 py-6" href="#proyectos">Proyectos</a>
+<a class="font-headline-md text-headline-md text-primary border-b border-outline-variant/30 py-6" href="#servicios">Servicios</a>
+<a class="font-headline-md text-headline-md text-primary border-b border-outline-variant/30 py-6" href="#metodologia">Metodología</a>
+<a class="font-headline-md text-headline-md text-primary py-6" href="#contacto">Contacto</a>
+</nav>
+<a class="mt-auto w-full py-5 bg-primary text-on-primary font-label-caps text-label-caps tracking-[0.1em] hover:bg-secondary transition-all duration-500 text-center uppercase" href="#contacto">
+                Solicitar proyecto
+            </a>
+</div>
+</div>
 <!-- 1. HERO PRINCIPAL -->
 <section class="relative h-screen w-full overflow-hidden">
 <div class="absolute inset-0 z-0">
 <div class="w-full h-full bg-cover bg-center ken-burns" data-alt="A cinematic, high-angle photograph of a breathtaking minimalist luxury villa overlooking the Mediterranean Sea at dusk. The architecture features clean white horizontal lines and warm interior lighting glowing through floor-to-ceiling glass walls. An infinity pool reflects the soft orange and purple hues of the twilight sky. The mood is sophisticated, serene, and ultra-premium architecture." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBta3fF7xikR51w6vENZ7vXYzJEwYi5PslYpmax5PCgl5CIN2WrX16JmGrQTStSA5L4_h9-zunDyFF-gJgxJ4B3TgS7gHpBndCNVRwmoRMNPYMySo5nH0k4vUNd95w6M7xFin-6kSoCJ_rp6QVytmO9uvcIaJLIAY1P-WL-dwKSZcBkDE9p9wlO1-JL3L0o-9ypuLexAozZaae26nP2pw0R_d9OCZGVbExAb-7kHwymiCk1G7NleMcr91hP3GJc3dTd0R8ocLBmzVM')"></div>
 <div class="absolute inset-0 bg-black/20"></div>
 </div>
-<div class="relative z-10 flex flex-col justify-center items-start h-full px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="relative z-10 flex flex-col justify-center items-center text-center md:items-start md:text-left h-full px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
 <h1 class="font-display-xl-mobile md:font-display-xl text-display-xl-mobile md:text-display-xl text-white max-w-4xl mb-6">
                 Arquitectura que transforma espacios en experiencias únicas.
             </h1>
-<p class="font-body-lg text-body-lg text-white/90 max-w-2xl mb-12">
+<p class="font-body-lg text-body-lg text-white/90 max-w-2xl mx-auto md:mx-0 mb-12">
                 Proyectos residenciales, interiorismo y arquitectura contemporánea en Murcia, Madrid y Barcelona.
             </p>
-<div class="flex flex-col sm:flex-row gap-6">
-<a class="px-10 py-4 border border-white text-white font-label-caps text-label-caps tracking-[0.15em] hover:bg-white hover:text-primary transition-all duration-500 text-center uppercase" href="#contacto">
+<div class="flex flex-col items-center w-full max-w-xs mx-auto sm:max-w-none sm:w-auto sm:flex-row sm:items-start gap-6">
+<a class="w-full sm:w-auto px-10 py-4 border border-white text-white font-label-caps text-label-caps hover:bg-white hover:text-primary transition-all duration-500 text-center uppercase" href="#contacto">
                     Solicitar proyecto
                 </a>
-<a class="px-10 py-4 border border-white/30 text-white font-label-caps text-label-caps tracking-[0.15em] hover:border-white transition-all duration-500 text-center uppercase" href="#proyectos">
+<a class="w-full sm:w-auto px-10 py-4 border border-white/30 text-white font-label-caps text-label-caps hover:border-white transition-all duration-500 text-center uppercase" href="#proyectos">
                     Ver proyectos
                 </a>
 </div>
@@ -185,7 +201,7 @@
 <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
 <div class="md:col-span-7 fade-in-up">
 <span class="font-label-caps text-label-caps text-secondary mb-4 block">FILOSOFÍA &amp; ESTUDIO</span>
-<h2 class="font-headline-lg text-headline-lg mb-8">Elevando lo cotidiano a través de la precisión arquitectónica.</h2>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg mb-8">Elevando lo cotidiano a través de la precisión arquitectónica.</h2>
 <p class="font-body-lg text-body-lg text-secondary mb-12">
                     Liderado por Antonio Rabadán, nuestro estudio se dedica a la creación de espacios que trascienden lo funcional. Creemos en un minimalismo cálido, donde la luz natural, los materiales nobles y la integración con el entorno dictan el ritmo de cada proyecto. Nuestra misión es materializar visiones exclusivas con una ejecución técnica impecable.
                 </p>
@@ -211,7 +227,7 @@
 <div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-16 flex justify-between items-end">
 <div>
 <span class="font-label-caps text-label-caps text-secondary mb-4 block">SELECCIÓN</span>
-<h2 class="font-headline-lg text-headline-lg">Proyectos destacados</h2>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg">Proyectos destacados</h2>
 </div>
 <a class="hidden md:block font-label-caps text-label-caps text-primary border-b border-primary pb-1 hover:text-secondary hover:border-secondary transition-colors" href="#">VER TODOS LOS PROYECTOS</a>
 </div>
@@ -240,7 +256,7 @@
 <section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto" id="servicios">
 <div class="text-center mb-20 fade-in-up">
 <span class="font-label-caps text-label-caps text-secondary mb-4 block">SERVICIOS</span>
-<h2 class="font-headline-lg text-headline-lg">Soluciones integrales de diseño</h2>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg">Soluciones integrales de diseño</h2>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
 <!-- Service 1 -->
@@ -268,7 +284,7 @@
 <div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
 <div class="mb-20 fade-in-up">
 <span class="font-label-caps text-label-caps text-primary-fixed mb-4 block">EL PROCESO</span>
-<h2 class="font-headline-lg text-headline-lg">De la idea a la realidad</h2>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg">De la idea a la realidad</h2>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-5 gap-12 relative">
 <!-- Step 1 -->
@@ -309,7 +325,7 @@
 <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter items-center">
 <div class="fade-in-up">
 <span class="font-label-caps text-label-caps text-secondary mb-4 block">UBICACIÓN</span>
-<h2 class="font-headline-lg text-headline-lg mb-8">Desarrollamos proyectos en toda España.</h2>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg mb-8">Desarrollamos proyectos en toda España.</h2>
 <p class="font-body-lg text-body-lg text-secondary mb-8">
                     Aunque nuestra base se encuentra en Murcia, nuestra visión no tiene fronteras. Hemos materializado proyectos residenciales y comerciales en los entornos más exigentes de Madrid y Barcelona, adaptándonos siempre al clima, la luz y la cultura local.
                 </p>
@@ -338,7 +354,7 @@
 <div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
 <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
 <div class="md:col-span-5 fade-in-up">
-<h2 class="font-headline-lg text-headline-lg mb-8">¿Hablamos sobre tu próximo proyecto?</h2>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg mb-8">¿Hablamos sobre tu próximo proyecto?</h2>
 <p class="font-body-lg text-body-lg text-secondary mb-12">Cuéntanos tu visión. Estamos listos para diseñar el espacio que siempre has imaginado.</p>
 <div class="space-y-6">
 <div class="flex items-center gap-4">
@@ -399,7 +415,7 @@
 <footer class="bg-surface border-t border-outline-variant py-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
 <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-20">
 <div class="md:col-span-6">
-<h3 class="font-headline-lg text-headline-lg text-primary mb-6">ANTONIO RABADÁN</h3>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary mb-6">ANTONIO RABADÁN</h3>
 <p class="font-body-md text-secondary max-w-sm">Estudio de arquitectura contemporánea enfocado en la excelencia y el diseño atemporal.</p>
 </div>
 <div class="md:col-span-2">
@@ -449,6 +465,26 @@
         }, observerOptions);
 
         document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
+
+        // Menú móvil
+        const menuToggle = document.getElementById('menu-toggle');
+        const menuIcon = document.getElementById('menu-icon');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        function setMobileMenuOpen(open) {
+            mobileMenu.classList.toggle('hidden', !open);
+            menuToggle.setAttribute('aria-expanded', String(open));
+            menuIcon.textContent = open ? 'close' : 'menu';
+            document.body.classList.toggle('overflow-hidden', open);
+        }
+
+        menuToggle.addEventListener('click', () => {
+            setMobileMenuOpen(mobileMenu.classList.contains('hidden'));
+        });
+
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => setMobileMenuOpen(false));
+        });
 
         // Mensaje de éxito/error tras enviar el formulario de contacto
         const formStatus = document.getElementById('form-status');
