@@ -1,0 +1,53 @@
+---
+const offices = [
+  { name: 'Murcia', x: 270, y: 260 },
+  { name: 'Madrid', x: 180, y: 185 },
+  { name: 'Barcelona', x: 290, y: 110 },
+];
+---
+
+<div class="w-full h-full bg-offwhite flex items-center justify-center">
+  <svg class="w-full h-full" preserveAspectRatio="xMidYMid meet" viewBox="0 0 400 420" xmlns="http://www.w3.org/2000/svg">
+    <path
+      d="M70,70 C100,55 130,45 175,42 C230,38 270,45 300,60 C320,72 332,85 335,110 C340,150 332,190 320,225 C335,260 325,295 300,320 C275,345 245,358 205,365 C170,372 135,368 110,350 C85,332 70,305 65,270 C55,230 50,190 55,150 C58,115 60,90 70,70 Z"
+      fill="#E7E1D8"
+      stroke="#A88B5B"
+      stroke-opacity="0.5"
+      stroke-width="1.5"
+    ></path>
+
+    {offices.map((office, i) => (
+      <g transform={`translate(${office.x}, ${office.y})`}>
+        <circle class="ar-pulse" fill="#A88B5B" r="6" style={`animation-delay: ${i * 0.4}s;`}></circle>
+        <circle fill="#A88B5B" r="4" stroke="#FAFAFA" stroke-width="1.5"></circle>
+        <text class="ar-label" text-anchor="middle" x="0" y="-14">AR</text>
+        <title>{office.name}</title>
+      </g>
+    ))}
+  </svg>
+</div>
+
+<style>
+  .ar-pulse {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: ar-pulse 2.4s ease-out infinite;
+  }
+  .ar-label {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 14px;
+    fill: #a88b5b;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.85);
+  }
+  @keyframes ar-pulse {
+    0% {
+      transform: scale(1);
+      opacity: 0.6;
+    }
+    100% {
+      transform: scale(3.4);
+      opacity: 0;
+    }
+  }
+</style>
