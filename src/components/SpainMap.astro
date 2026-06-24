@@ -25,16 +25,15 @@ const { id = 'spain-map' } = Astro.props;
       { name: 'Barcelona · Oficina', coords: [41.3851, 2.1734] },
     ];
 
+    const arIcon = window.L.divIcon({
+      className: 'ar-map-marker',
+      html: '<span style="font-family:&quot;Playfair Display&quot;,serif;font-weight:700;color:#A88B5B;font-size:18px;white-space:nowrap;text-shadow:0 1px 3px rgba(0,0,0,0.25);">AR</span>',
+      iconSize: [30, 20],
+      iconAnchor: [15, 10],
+    });
+
     offices.forEach((office) => {
-      window.L.circleMarker(office.coords, {
-        radius: 8,
-        color: '#A88B5B',
-        fillColor: '#A88B5B',
-        fillOpacity: 1,
-        weight: 2,
-      })
-        .addTo(map)
-        .bindPopup(office.name);
+      window.L.marker(office.coords, { icon: arIcon }).addTo(map).bindPopup(office.name);
     });
   }
 
