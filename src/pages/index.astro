@@ -134,7 +134,7 @@ const featuredProjects = getFeaturedProjects();
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
       {testimonials.map((t, i) => (
         <div class="rounded-3xl bg-sand p-10 fade-in-up" style={`transition-delay: ${i * 150}ms;`}>
-          <p class="font-serif text-xl leading-relaxed text-ink mb-8">&ldquo;{t.quote}&rdquo;</p>
+          <p class="font-sans text-xl leading-relaxed text-ink mb-8">&ldquo;{t.quote}&rdquo;</p>
           <div class="flex items-center gap-4">
             <span class="flex items-center justify-center w-12 h-12 rounded-full bg-gold/20 text-gold font-display">{t.initials}</span>
             <div>
