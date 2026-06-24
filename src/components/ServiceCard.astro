@@ -1,0 +1,14 @@
+---
+const { service, delay = 0 } = Astro.props;
+---
+
+<a
+  class="group rounded-3xl bg-offwhite border border-sand p-10 hover:shadow-lg transition-shadow fade-in-up block"
+  href={`/servicios/${service.slug}`}
+  style={delay ? `transition-delay: ${delay}ms;` : undefined}
+>
+  <span class="material-symbols-outlined text-3xl text-gold bg-gold/10 rounded-full p-4 inline-block mb-8">{service.icon}</span>
+  <h3 class="font-display text-2xl mb-4">{service.name}</h3>
+  <p class="text-graphite leading-relaxed mb-4">{service.excerpt}</p>
+  <span class="text-sm font-sans font-semibold uppercase tracking-wide text-gold group-hover:text-ink transition-colors">Saber más →</span>
+</a>

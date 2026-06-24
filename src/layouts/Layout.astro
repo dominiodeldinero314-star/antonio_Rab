@@ -1,0 +1,101 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const {
+  title,
+  description = 'Estudio de arquitectura, interiorismo y diseño en Murcia, Madrid y Barcelona.',
+  transparentHeader = false,
+} = Astro.props;
+
+const pageTitle = `${title} | Antonio Rabadán Arquitectura`;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>{pageTitle}</title>
+    <meta content={description} name="description" />
+    <link href={new URL(Astro.url.pathname, Astro.site)} rel="canonical" />
+    <link href="/favicon.svg" rel="icon" type="image/svg+xml" />
+
+    <meta content={pageTitle} property="og:title" />
+    <meta content={description} property="og:description" />
+    <meta content="website" property="og:type" />
+    <meta content="summary_large_image" name="twitter:card" />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+
+    <script id="tailwind-config">
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              cream: '#F7F5F2',
+              sand: '#E7E1D8',
+              ink: '#111111',
+              graphite: '#5C5C5C',
+              gold: '#A88B5B',
+              offwhite: '#FAFAFA',
+            },
+            fontFamily: {
+              display: ['"Playfair Display"', 'serif'],
+              serif: ['"Cormorant Garamond"', 'serif'],
+              sans: ['Inter', 'sans-serif'],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      h1, h2, h3, h4 {
+        font-optical-sizing: auto;
+      }
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+      }
+      .ken-burns {
+        animation: kenburns 24s infinite alternate linear;
+      }
+      @keyframes kenburns {
+        0% { transform: scale(1); }
+        100% { transform: scale(1.1); }
+      }
+      .fade-in-up {
+        opacity: 0;
+        transform: translateY(28px);
+        transition: all 0.9s ease-out;
+      }
+      .fade-in-up.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+  <body class="bg-cream text-ink font-sans overflow-x-hidden" id="top">
+    <Header transparent={transparentHeader} />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+
+    <script>
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) entry.target.classList.add('visible');
+          });
+        },
+        { threshold: 0.1 }
+      );
+      document.querySelectorAll('.fade-in-up').forEach((el) => observer.observe(el));
+    </script>
+  </body>
+</html>

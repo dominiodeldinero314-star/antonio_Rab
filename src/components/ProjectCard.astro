@@ -1,0 +1,20 @@
+---
+const { project, delay = 0 } = Astro.props;
+---
+
+<a
+  class="group relative aspect-[4/3] rounded-3xl overflow-hidden fade-in-up shadow-sm block"
+  href={`/proyectos/${project.slug}`}
+  style={delay ? `transition-delay: ${delay}ms;` : undefined}
+>
+  <div
+    class="w-full h-full bg-cover bg-center transition-transform duration-1000 group-hover:scale-105"
+    style={`background-image: url('${project.image}')`}
+  >
+  </div>
+  <div class="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/10 to-transparent"></div>
+  <div class="absolute bottom-0 left-0 p-8 text-offwhite">
+    <p class="text-xs font-sans font-semibold uppercase tracking-wide text-gold mb-2">{project.category} · {project.location}</p>
+    <h3 class="font-display text-2xl">{project.name}</h3>
+  </div>
+</a>

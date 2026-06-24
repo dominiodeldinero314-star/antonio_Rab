@@ -1,0 +1,107 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout description="Contacta con el estudio Antonio Rabadán Arquitectura para tu próximo proyecto." title="Contacto">
+  <section class="pt-40 pb-24 md:pb-32 px-6 md:px-16 max-w-[1440px] mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+      <div class="md:col-span-5 fade-in-up">
+        <span class="text-xs md:text-sm font-sans font-semibold uppercase tracking-[0.2em] text-gold mb-4 block">Contacto</span>
+        <h1 class="font-display text-4xl md:text-6xl leading-tight mb-8">¿Hablamos sobre tu próximo proyecto?</h1>
+        <p class="text-graphite text-base md:text-lg leading-relaxed mb-12">
+          Cuéntanos tu visión. Estamos listos para diseñar el espacio que siempre has imaginado.
+        </p>
+        <div class="space-y-6">
+          <a class="flex items-center gap-4 hover:text-gold transition-colors" href="mailto:estudio@antoniorabadan.com">
+            <span class="material-symbols-outlined text-gold bg-gold/10 rounded-full p-3">mail</span>
+            <span>estudio@antoniorabadan.com</span>
+          </a>
+          <a class="flex items-center gap-4 hover:text-gold transition-colors" href="tel:+34968000000">
+            <span class="material-symbols-outlined text-gold bg-gold/10 rounded-full p-3">call</span>
+            <span>+34 968 000 000</span>
+          </a>
+          <a class="flex items-center gap-4 hover:text-gold transition-colors" href="https://wa.me/34968000000" rel="noopener" target="_blank">
+            <span class="material-symbols-outlined text-gold bg-gold/10 rounded-full p-3">chat</span>
+            <span>WhatsApp</span>
+          </a>
+          <a class="flex items-center gap-4 hover:text-gold transition-colors" href="https://instagram.com" rel="noopener" target="_blank">
+            <span class="material-symbols-outlined text-gold bg-gold/10 rounded-full p-3">photo_camera</span>
+            <span>Instagram</span>
+          </a>
+          <div class="flex items-center gap-4">
+            <span class="material-symbols-outlined text-gold bg-gold/10 rounded-full p-3">location_on</span>
+            <span>Calle Mayor 1, 30001 Murcia</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="md:col-span-7 bg-sand rounded-3xl p-8 md:p-14 fade-in-up" style="transition-delay: 150ms;">
+        <div class="hidden mb-8 p-4 rounded-2xl font-sans font-semibold" id="form-status"></div>
+        <form action="/api/contact" class="space-y-6" method="POST">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label class="text-xs font-sans font-semibold uppercase tracking-wide text-graphite mb-2 block">Nombre</label>
+              <input class="w-full rounded-full bg-offwhite border border-sand focus:ring-0 focus:border-gold px-6 py-3 transition-colors" name="nombre" placeholder="Tu nombre completo" required type="text" />
+            </div>
+            <div>
+              <label class="text-xs font-sans font-semibold uppercase tracking-wide text-graphite mb-2 block">Email</label>
+              <input class="w-full rounded-full bg-offwhite border border-sand focus:ring-0 focus:border-gold px-6 py-3 transition-colors" name="email" placeholder="email@ejemplo.com" required type="email" />
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label class="text-xs font-sans font-semibold uppercase tracking-wide text-graphite mb-2 block">Teléfono</label>
+              <input class="w-full rounded-full bg-offwhite border border-sand focus:ring-0 focus:border-gold px-6 py-3 transition-colors" name="telefono" placeholder="+34 600 000 000" type="tel" />
+            </div>
+            <div>
+              <label class="text-xs font-sans font-semibold uppercase tracking-wide text-graphite mb-2 block">Ciudad</label>
+              <input class="w-full rounded-full bg-offwhite border border-sand focus:ring-0 focus:border-gold px-6 py-3 transition-colors" name="ciudad" placeholder="Murcia, Madrid..." type="text" />
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label class="text-xs font-sans font-semibold uppercase tracking-wide text-graphite mb-2 block">Tipo de proyecto</label>
+              <select class="w-full rounded-full bg-offwhite border border-sand focus:ring-0 focus:border-gold px-6 py-3 transition-colors" name="tipo_proyecto">
+                <option>Vivienda nueva</option>
+                <option>Reforma integral</option>
+                <option>Interiorismo</option>
+                <option>Espacio comercial</option>
+                <option>Otro</option>
+              </select>
+            </div>
+            <div>
+              <label class="text-xs font-sans font-semibold uppercase tracking-wide text-graphite mb-2 block">Presupuesto aproximado</label>
+              <select class="w-full rounded-full bg-offwhite border border-sand focus:ring-0 focus:border-gold px-6 py-3 transition-colors" name="presupuesto">
+                <option>+100.000€</option>
+                <option>+300.000€</option>
+                <option>+500.000€</option>
+                <option>Proyectos especiales</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label class="text-xs font-sans font-semibold uppercase tracking-wide text-graphite mb-2 block">Mensaje</label>
+            <textarea class="w-full rounded-2xl bg-offwhite border border-sand focus:ring-0 focus:border-gold px-6 py-3 transition-colors" name="mensaje" placeholder="Cuéntanos un poco sobre tu idea..." required rows="4"></textarea>
+          </div>
+          <button class="w-full rounded-full py-4 bg-gold text-ink font-sans font-semibold uppercase tracking-wide hover:bg-ink hover:text-offwhite transition-colors" type="submit">
+            Enviar consulta
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const formStatus = document.getElementById('form-status');
+    const contactoParam = new URLSearchParams(window.location.search).get('contacto');
+    if (formStatus && contactoParam) {
+      const ok = contactoParam === 'ok';
+      formStatus.textContent = ok
+        ? 'Gracias por tu mensaje. Te responderemos lo antes posible.'
+        : 'No se ha podido enviar el mensaje. Inténtalo de nuevo o escríbenos directamente por email.';
+      formStatus.classList.remove('hidden');
+      formStatus.classList.add(ok ? 'bg-gold/15' : 'bg-red-100', ok ? 'text-ink' : 'text-red-700');
+      window.history.replaceState({}, document.title, window.location.pathname);
+    }
+  </script>
+</Layout>

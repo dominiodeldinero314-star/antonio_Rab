@@ -1,0 +1,108 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { IMG_FACADE, IMG_MAP } from '../data/images.js';
+---
+
+<Layout description="Historia, filosofía, equipo y método de trabajo del estudio Antonio Rabadán Arquitectura." title="Estudio">
+  <!-- HISTORIA -->
+  <section class="pt-40 pb-24 md:pb-32 px-6 md:px-16 max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+    <div class="md:col-span-7 fade-in-up">
+      <span class="text-xs md:text-sm font-sans font-semibold uppercase tracking-[0.2em] text-gold mb-4 block">Historia</span>
+      <h1 class="font-display text-4xl md:text-6xl leading-tight mb-8">Quince años diseñando espacios con sentido.</h1>
+      <p class="text-graphite text-base md:text-lg leading-relaxed mb-6">
+        Antonio Rabadán Arquitectura nace en Murcia con la voluntad de ofrecer un servicio integral: desde el primer
+        boceto hasta la última pieza de mobiliario. Con el tiempo, el estudio ha extendido su actividad a Madrid y
+        Barcelona, manteniendo siempre el mismo método de trabajo y la misma exigencia técnica.
+      </p>
+      <p class="text-graphite text-base md:text-lg leading-relaxed">
+        Hoy el estudio combina arquitectura residencial, viviendas de lujo, reformas integrales, interiorismo y
+        proyectos comerciales, abordando cada encargo como una pieza única.
+      </p>
+    </div>
+    <div class="md:col-span-5 fade-in-up" style="transition-delay: 150ms;">
+      <div class="rounded-3xl overflow-hidden aspect-[4/5]">
+        <div class="w-full h-full bg-cover bg-center" style={`background-image: url('${IMG_FACADE}')`}></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FILOSOFÍA -->
+  <section class="bg-sand py-24 md:py-32">
+    <div class="px-6 md:px-16 max-w-[1440px] mx-auto text-center max-w-3xl fade-in-up">
+      <span class="text-xs md:text-sm font-sans font-semibold uppercase tracking-[0.2em] text-gold mb-6 block">Filosofía</span>
+      <p class="font-serif italic text-2xl md:text-3xl leading-relaxed text-ink">
+        Creemos en un minimalismo cálido, donde la luz natural, los materiales nobles y la integración con el entorno
+        dictan el ritmo de cada proyecto. El verdadero lujo está en la coherencia de cada decisión.
+      </p>
+    </div>
+  </section>
+
+  <!-- EQUIPO -->
+  <section class="py-24 md:py-32 px-6 md:px-16 max-w-[1440px] mx-auto">
+    <div class="mb-14 fade-in-up">
+      <span class="text-xs md:text-sm font-sans font-semibold uppercase tracking-[0.2em] text-gold mb-4 block">Equipo</span>
+      <h2 class="font-display text-3xl md:text-5xl max-w-2xl">Dirección y equipo multidisciplinar</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+      <div class="md:col-span-4 fade-in-up">
+        <div class="aspect-square rounded-3xl bg-ink flex items-center justify-center mb-6">
+          <span class="font-display text-5xl text-offwhite/40">AR</span>
+        </div>
+        <h3 class="font-display text-2xl mb-1">Antonio Rabadán</h3>
+        <p class="text-gold text-sm font-sans font-semibold uppercase tracking-wide">Director y arquitecto</p>
+      </div>
+      <div class="md:col-span-8 fade-in-up" style="transition-delay: 150ms;">
+        <p class="text-graphite text-base md:text-lg leading-relaxed">
+          Cada proyecto se desarrolla con el apoyo de un equipo multidisciplinar de arquitectura técnica, interiorismo
+          y dirección de obra, coordinado directamente por Antonio Rabadán. Esta estructura permite mantener un
+          criterio único y coherente desde el primer boceto hasta la entrega final, sin perder la cercanía de un
+          estudio de tamaño humano.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MÉTODO DE TRABAJO -->
+  <section class="bg-ink text-offwhite py-24 md:py-32">
+    <div class="px-6 md:px-16 max-w-[1440px] mx-auto">
+      <div class="mb-16 fade-in-up">
+        <span class="text-xs md:text-sm font-sans font-semibold uppercase tracking-[0.2em] text-gold mb-4 block">Método de trabajo</span>
+        <h2 class="font-display text-3xl md:text-5xl">De la idea a la realidad</h2>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-10">
+        {[
+          { n: '01', title: 'Primera reunión', text: 'Escuchamos tus necesidades, sueños y el propósito del espacio.' },
+          { n: '02', title: 'Concepto y diseño', text: 'Primeras líneas, volúmenes y esencia arquitectónica del proyecto.' },
+          { n: '03', title: 'Proyecto técnico', text: 'Planos, licencias y especificaciones para garantizar la viabilidad.' },
+          { n: '04', title: 'Ejecución', text: 'Dirección de obra exhaustiva, fiel al diseño hasta el último detalle.' },
+          { n: '05', title: 'Entrega', text: 'El espacio cobra vida y comienza la nueva experiencia del cliente.' },
+        ].map((step, i) => (
+          <div class="fade-in-up" style={`transition-delay: ${i * 100}ms;`}>
+            <span class="flex items-center justify-center w-12 h-12 rounded-full border border-gold text-gold font-display mb-5">{step.n}</span>
+            <h4 class="font-display text-xl mb-3">{step.title}</h4>
+            <p class="text-offwhite/70 leading-relaxed">{step.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- PRESENCIA NACIONAL -->
+  <section class="py-24 md:py-32 px-6 md:px-16 max-w-[1440px] mx-auto overflow-hidden">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div class="fade-in-up">
+        <span class="text-xs md:text-sm font-sans font-semibold uppercase tracking-[0.2em] text-gold mb-4 block">Presencia nacional</span>
+        <h2 class="font-display text-3xl md:text-5xl leading-tight mb-8">Murcia, Madrid y Barcelona.</h2>
+        <p class="text-graphite text-base md:text-lg leading-relaxed">
+          Aunque nuestra base se encuentra en Murcia, nuestra visión no tiene fronteras. Hemos materializado proyectos
+          residenciales y comerciales en los entornos más exigentes de Madrid y Barcelona, adaptándonos siempre al
+          clima, la luz y la cultura local.
+        </p>
+      </div>
+      <div class="relative h-[420px] md:h-[500px] rounded-3xl overflow-hidden fade-in-up shadow-sm" style="transition-delay: 200ms;">
+        <div class="w-full h-full bg-cover bg-center" style={`background-image: url('${IMG_MAP}')`}></div>
+        <div class="absolute inset-0 bg-gold/10"></div>
+      </div>
+    </div>
+  </section>
+</Layout>

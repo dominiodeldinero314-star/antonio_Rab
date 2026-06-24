@@ -1,14 +1,14 @@
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
-    res.writeHead(302, { Location: '/index.html' });
+    res.writeHead(302, { Location: '/contacto' });
     return res.end();
   }
 
-  const { nombre, email, ciudad, presupuesto, mensaje } = req.body || {};
+  const { nombre, email, telefono, ciudad, tipo_proyecto, presupuesto, mensaje } = req.body || {};
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   if (!nombre || !mensaje || !emailRegex.test(email || '')) {
-    res.writeHead(302, { Location: '/index.html?contacto=error#contacto' });
+    res.writeHead(302, { Location: '/contacto?contacto=error' });
     return res.end();
   }
 
@@ -28,17 +28,17 @@ export default async function handler(req, res) {
         to: destinatario,
         reply_to: email,
         subject: `Nueva consulta desde la web - ${nombre}`,
-        text: `Nombre: ${nombre}\nEmail: ${email}\nCiudad: ${ciudad || ''}\nPresupuesto estimado: ${presupuesto || ''}\n\nMensaje:\n${mensaje}`,
+        text: `Nombre: ${nombre}\nEmail: ${email}\nTeléfono: ${telefono || ''}\nCiudad: ${ciudad || ''}\nTipo de proyecto: ${tipo_proyecto || ''}\nPresupuesto estimado: ${presupuesto || ''}\n\nMensaje:\n${mensaje}`,
       }),
     });
 
     if (!response.ok) throw new Error(`Resend respondió ${response.status}`);
 
-    res.writeHead(302, { Location: '/index.html?contacto=ok#contacto' });
+    res.writeHead(302, { Location: '/contacto?contacto=ok' });
     return res.end();
   } catch (err) {
     console.error('Error enviando email de contacto:', err);
-    res.writeHead(302, { Location: '/index.html?contacto=error#contacto' });
+    res.writeHead(302, { Location: '/contacto?contacto=error' });
     return res.end();
   }
 }
