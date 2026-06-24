@@ -1,0 +1,10 @@
+{
+  "headers": [
+    {
+      "source": "/((?!_astro|images|favicon.svg|robots.txt|sitemap.xml).*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-cache, must-revalidate" }
+      ]
+    }
+  ]
+}
