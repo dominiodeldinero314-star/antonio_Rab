@@ -12,9 +12,9 @@ const scrolledClasses = 'bg-cream/95 backdrop-blur-md border-b border-sand text-
   id="site-header"
 >
   <div class="flex justify-between items-center h-full px-6 md:px-16 max-w-[1440px] mx-auto">
-    <a class="flex items-center gap-3" href="/">
-      <span class="flex items-center justify-center w-9 h-9 md:w-10 md:h-10 rounded-full bg-ink text-offwhite font-display text-sm md:text-base shrink-0">AR</span>
-      <span class="font-display text-2xl md:text-3xl">Antonio Rabadán</span>
+    <a class="flex items-baseline gap-2" href="/">
+      <span class="font-display font-bold text-2xl md:text-3xl">AR</span>
+      <span class="font-display text-xl md:text-2xl">Antonio Rabadán</span>
     </a>
     <nav class="hidden md:flex items-center gap-10">
       <a class="text-sm font-sans font-semibold uppercase tracking-wide opacity-90 hover:opacity-100 hover:text-gold transition-colors" href="/">Inicio</a>
@@ -30,39 +30,37 @@ const scrolledClasses = 'bg-cream/95 backdrop-blur-md border-b border-sand text-
   </div>
 </header>
 
-<div class="hidden md:!hidden fixed inset-0 z-40 bg-cream" id="mobile-menu">
-  <div class="flex flex-col h-full px-6 pt-28 pb-12">
-    <nav class="flex flex-col">
-      <a class="font-display text-3xl text-ink border-b border-sand py-5" href="/">Inicio</a>
-      <a class="font-display text-3xl text-ink border-b border-sand py-5" href="/proyectos">Proyectos</a>
-      <a class="font-display text-3xl text-ink border-b border-sand py-5" href="/servicios">Servicios</a>
-      <a class="font-display text-3xl text-ink border-b border-sand py-5" href="/estudio">Estudio</a>
-      <a class="font-display text-3xl text-ink py-5" href="/contacto">Contacto</a>
-    </nav>
-    <a class="mt-auto w-full rounded-full bg-ink text-offwhite text-center text-sm font-sans font-semibold uppercase tracking-wide px-6 py-4 hover:bg-gold hover:text-ink transition-colors" href="/contacto">
-      Solicitar proyecto
-    </a>
-  </div>
+<div class="hidden md:!hidden fixed top-24 inset-x-6 max-w-xs mx-auto z-40 bg-offwhite rounded-3xl shadow-2xl p-3" id="mobile-menu">
+  <nav class="flex flex-col">
+    <a class="font-display text-lg text-ink border-b border-sand py-3 px-3" href="/">Inicio</a>
+    <a class="font-display text-lg text-ink border-b border-sand py-3 px-3" href="/proyectos">Proyectos</a>
+    <a class="font-display text-lg text-ink border-b border-sand py-3 px-3" href="/servicios">Servicios</a>
+    <a class="font-display text-lg text-ink border-b border-sand py-3 px-3" href="/estudio">Estudio</a>
+    <a class="font-display text-lg text-ink py-3 px-3" href="/contacto">Contacto</a>
+  </nav>
 </div>
 
 <script>
   const header = document.getElementById('site-header');
-  if (header) {
-    const isTransparent = header.dataset.transparent === 'true';
-    const transparentClasses = ['bg-transparent', 'text-offwhite'];
-    const scrolledClasses = ['bg-cream/95', 'backdrop-blur-md', 'border-b', 'border-sand', 'text-ink', 'shadow-sm'];
+  const transparentClasses = ['bg-transparent', 'text-offwhite'];
+  const scrolledClasses = ['bg-cream/95', 'backdrop-blur-md', 'border-b', 'border-sand', 'text-ink', 'shadow-sm'];
+  let isTransparent = false;
 
-    function applyScrolled(scrolled) {
-      if (scrolled) {
-        header.classList.remove(...transparentClasses);
-        header.classList.add(...scrolledClasses);
-      } else if (isTransparent) {
-        header.classList.remove(...scrolledClasses);
-        header.classList.add(...transparentClasses);
-      }
+  function applyScrolled(scrolled) {
+    if (!header) return;
+    if (scrolled) {
+      header.classList.remove(...transparentClasses);
+      header.classList.add(...scrolledClasses);
+    } else if (isTransparent) {
+      header.classList.remove(...scrolledClasses);
+      header.classList.add(...transparentClasses);
     }
+  }
 
-    const onScroll = () => applyScrolled(window.scrollY > 40);
+  const onScroll = () => applyScrolled(window.scrollY > 40);
+
+  if (header) {
+    isTransparent = header.dataset.transparent === 'true';
     window.addEventListener('scroll', onScroll);
     onScroll();
   }
@@ -77,6 +75,9 @@ const scrolledClasses = 'bg-cream/95 backdrop-blur-md border-b border-sand text-
       menuToggle.setAttribute('aria-expanded', String(open));
       menuIcon.textContent = open ? 'close' : 'menu';
       document.body.classList.toggle('overflow-hidden', open);
+      // Mientras el menú está abierto, el header se fuerza a su estado "sólido"
+      // para que el logo y el icono de cerrar sigan siendo visibles.
+      applyScrolled(open || window.scrollY > 40);
     }
 
     menuToggle.addEventListener('click', () => {

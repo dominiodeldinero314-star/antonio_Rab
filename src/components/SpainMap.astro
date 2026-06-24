@@ -1,0 +1,49 @@
+---
+const { id = 'spain-map' } = Astro.props;
+---
+
+<link href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" rel="stylesheet" />
+
+<div class="w-full h-full" id={id}></div>
+
+<script define:vars={{ id }}>
+  function initMap() {
+    const container = document.getElementById(id);
+    if (!container || !window.L || container.dataset.initialized) return;
+    container.dataset.initialized = 'true';
+
+    const map = window.L.map(id, { scrollWheelZoom: false }).setView([40.2, -2.5], 6);
+
+    window.L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+      attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+      maxZoom: 19,
+    }).addTo(map);
+
+    const offices = [
+      { name: 'Murcia · Sede central', coords: [37.9922, -1.1307] },
+      { name: 'Madrid · Oficina', coords: [40.4168, -3.7038] },
+      { name: 'Barcelona · Oficina', coords: [41.3851, 2.1734] },
+    ];
+
+    offices.forEach((office) => {
+      window.L.circleMarker(office.coords, {
+        radius: 8,
+        color: '#A88B5B',
+        fillColor: '#A88B5B',
+        fillOpacity: 1,
+        weight: 2,
+      })
+        .addTo(map)
+        .bindPopup(office.name);
+    });
+  }
+
+  if (window.L) {
+    initMap();
+  } else {
+    const script = document.createElement('script');
+    script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+    script.onload = initMap;
+    document.head.appendChild(script);
+  }
+</script>

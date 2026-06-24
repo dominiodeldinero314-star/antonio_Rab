@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { IMG_FACADE, IMG_MAP } from '../data/images.js';
+import SpainMap from '../components/SpainMap.astro';
+import { IMG_FACADE } from '../data/images.js';
 ---
 
 <Layout description="Historia, filosofía, equipo y método de trabajo del estudio Antonio Rabadán Arquitectura." title="Estudio">
@@ -11,8 +12,8 @@ import { IMG_FACADE, IMG_MAP } from '../data/images.js';
       <h1 class="font-display text-4xl md:text-6xl leading-tight mb-8">Quince años diseñando espacios con sentido.</h1>
       <p class="text-graphite text-base md:text-lg leading-relaxed mb-6">
         Antonio Rabadán Arquitectura nace en Murcia con la voluntad de ofrecer un servicio integral: desde el primer
-        boceto hasta la última pieza de mobiliario. Con el tiempo, el estudio ha extendido su actividad a Madrid y
-        Barcelona, manteniendo siempre el mismo método de trabajo y la misma exigencia técnica.
+        boceto hasta la última pieza de mobiliario. Con el tiempo, el estudio ha abierto oficinas en Madrid y
+        Barcelona, manteniendo siempre el mismo método de trabajo y la misma exigencia técnica en proyectos de toda España.
       </p>
       <p class="text-graphite text-base md:text-lg leading-relaxed">
         Hoy el estudio combina arquitectura residencial, viviendas de lujo, reformas integrales, interiorismo y
@@ -69,18 +70,21 @@ import { IMG_FACADE, IMG_MAP } from '../data/images.js';
         <span class="text-xs md:text-sm font-sans font-semibold uppercase tracking-[0.2em] text-gold mb-4 block">Método de trabajo</span>
         <h2 class="font-display text-3xl md:text-5xl">De la idea a la realidad</h2>
       </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-10">
+      <div class="relative">
+        <div class="hidden md:block absolute left-6 top-2 bottom-2 w-px bg-offwhite/15"></div>
         {[
           { n: '01', title: 'Primera reunión', text: 'Escuchamos tus necesidades, sueños y el propósito del espacio.' },
           { n: '02', title: 'Concepto y diseño', text: 'Primeras líneas, volúmenes y esencia arquitectónica del proyecto.' },
           { n: '03', title: 'Proyecto técnico', text: 'Planos, licencias y especificaciones para garantizar la viabilidad.' },
           { n: '04', title: 'Ejecución', text: 'Dirección de obra exhaustiva, fiel al diseño hasta el último detalle.' },
           { n: '05', title: 'Entrega', text: 'El espacio cobra vida y comienza la nueva experiencia del cliente.' },
-        ].map((step, i) => (
-          <div class="fade-in-up" style={`transition-delay: ${i * 100}ms;`}>
-            <span class="flex items-center justify-center w-12 h-12 rounded-full border border-gold text-gold font-display mb-5">{step.n}</span>
-            <h4 class="font-display text-xl mb-3">{step.title}</h4>
-            <p class="text-offwhite/70 leading-relaxed">{step.text}</p>
+        ].map((step) => (
+          <div class="relative flex items-start gap-6 md:gap-10 py-8 md:py-12 border-b border-offwhite/10 last:border-b-0 fade-in-up">
+            <span class="relative z-10 flex items-center justify-center w-12 h-12 shrink-0 rounded-full bg-ink border border-gold text-gold font-display">{step.n}</span>
+            <div class="pt-2">
+              <h4 class="font-display text-xl md:text-2xl mb-3">{step.title}</h4>
+              <p class="text-offwhite/70 leading-relaxed max-w-xl">{step.text}</p>
+            </div>
           </div>
         ))}
       </div>
@@ -94,14 +98,12 @@ import { IMG_FACADE, IMG_MAP } from '../data/images.js';
         <span class="text-xs md:text-sm font-sans font-semibold uppercase tracking-[0.2em] text-gold mb-4 block">Presencia nacional</span>
         <h2 class="font-display text-3xl md:text-5xl leading-tight mb-8">Murcia, Madrid y Barcelona.</h2>
         <p class="text-graphite text-base md:text-lg leading-relaxed">
-          Aunque nuestra base se encuentra en Murcia, nuestra visión no tiene fronteras. Hemos materializado proyectos
-          residenciales y comerciales en los entornos más exigentes de Madrid y Barcelona, adaptándonos siempre al
-          clima, la luz y la cultura local.
+          Contamos con oficinas en Murcia, Madrid y Barcelona, pero desarrollamos proyectos residenciales y comerciales
+          en toda España, adaptándonos siempre al clima, la luz y la cultura de cada lugar.
         </p>
       </div>
       <div class="relative h-[420px] md:h-[500px] rounded-3xl overflow-hidden fade-in-up shadow-sm" style="transition-delay: 200ms;">
-        <div class="w-full h-full bg-cover bg-center" style={`background-image: url('${IMG_MAP}')`}></div>
-        <div class="absolute inset-0 bg-gold/10"></div>
+        <SpainMap id="spain-map-estudio" />
       </div>
     </div>
   </section>
