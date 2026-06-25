@@ -12,6 +12,12 @@ const featuredProjects = getFeaturedProjects();
 ---
 
 <Layout title="Inicio" transparentHeader={true}>
+  <script is:inline>
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+  </script>
   <!-- HERO -->
   <section class="relative h-screen w-full overflow-hidden">
     <div class="absolute inset-0 z-0">
