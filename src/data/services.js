@@ -19,7 +19,7 @@ export const services = [
     slug: 'viviendas-de-lujo',
     name: 'Viviendas de Lujo',
     icon: 'diamond',
-    image: IMG_FACADE,
+    image: IMG_LIVING,
     excerpt: 'Exclusividad técnica y estética para clientes que buscan lo excepcional en cada detalle.',
     explanation:
       'Trabajamos con materiales nobles, soluciones constructivas singulares y un nivel de detalle propio de la alta arquitectura residencial. Cada vivienda de lujo se concibe como una pieza única, donde la exclusividad se mide en la calidad de la ejecución y no solo en la superficie construida.',
@@ -33,7 +33,7 @@ export const services = [
     slug: 'reformas-integrales',
     name: 'Reformas Integrales',
     icon: 'home_repair_service',
-    image: IMG_LIVING,
+    image: IMG_FACADE,
     excerpt: 'Transformamos viviendas y locales existentes sin perder su carácter original.',
     explanation:
       'Una reforma integral bien planteada puede transformar por completo la experiencia de un espacio sin necesidad de partir de cero. Analizamos el estado actual del inmueble, su potencial y sus condicionantes, para proponer una intervención que combine respeto por lo existente y una visión contemporánea.',
