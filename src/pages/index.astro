@@ -6,7 +6,6 @@ import { getFeaturedProjects } from '../data/projects.js';
 import { services } from '../data/services.js';
 import { testimonials } from '../data/testimonials.js';
 import SpainSvgMap from '../components/SpainSvgMap.astro';
-import { IMG_HERO } from '../data/images.js';
 
 const featuredProjects = getFeaturedProjects();
 ---
@@ -25,20 +24,26 @@ const featuredProjects = getFeaturedProjects();
   <!-- HERO -->
   <section class="relative h-screen w-full overflow-hidden">
     <div class="absolute inset-0 z-0">
-      <div class="w-full h-full bg-cover bg-center ken-burns" style={`background-image: url('${IMG_HERO}')`}></div>
-      <div class="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/35 to-ink/10"></div>
-      <div class="absolute inset-0 bg-gradient-to-r from-ink/65 via-ink/20 to-transparent"></div>
+      <div class="w-full h-full bg-cover bg-center ken-burns" style="background-image: url('/images/imageninicio.png');"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/30 to-ink/10"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-ink/55 via-ink/10 to-transparent"></div>
     </div>
     <div class="relative z-10 flex flex-col justify-center items-center text-center md:items-start md:text-left h-full px-6 md:px-16 max-w-[1440px] mx-auto">
-      <h1 class="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl leading-[1.1] sm:leading-[1.05] tracking-tight text-offwhite max-w-3xl mb-12 enter-up">
+      <h1 class="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl leading-[1.1] sm:leading-[1.05] tracking-tight text-offwhite max-w-3xl mb-10 enter-up">
         Arquitectura que transforma espacios.
       </h1>
-      <div class="flex flex-col items-center w-full max-w-xs mx-auto sm:max-w-none sm:w-auto sm:flex-row gap-4 enter-up" style="animation-delay: 200ms;">
-        <a class="w-full sm:w-auto rounded-none bg-gold text-ink font-sans font-semibold px-10 py-4 hover:bg-offwhite transition-all duration-300 text-center" href="/contacto">
+      <div class="flex flex-col items-center gap-6 sm:flex-row sm:gap-12 mt-10 enter-up" style="animation-delay: 200ms;">
+        <a class="group flex items-center gap-3 text-offwhite font-sans font-semibold uppercase tracking-wide text-sm hover:text-gold transition-colors duration-300" href="/contacto">
           Solicitar proyecto
+          <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
         </a>
-        <a class="w-full sm:w-auto rounded-none border border-offwhite/50 text-offwhite font-sans font-semibold px-10 py-4 hover:bg-offwhite/10 hover:border-offwhite transition-all duration-300 text-center" href="/proyectos">
+        <a class="group flex items-center gap-3 text-offwhite font-sans font-semibold uppercase tracking-wide text-sm hover:text-gold transition-colors duration-300" href="/proyectos">
           Ver proyectos
+          <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
         </a>
       </div>
     </div>
@@ -46,9 +51,6 @@ const featuredProjects = getFeaturedProjects();
       <span class="text-[10px] font-sans uppercase tracking-[0.3em]">Descubre</span>
       <span class="w-px h-9 bg-offwhite/40"></span>
     </div>
-    <a class="absolute bottom-3 right-4 text-offwhite/40 hover:text-offwhite/70 text-[10px] font-sans transition-colors duration-300" href="https://commons.wikimedia.org/wiki/File:Neuss_(DE),_Raketenstation_Hombroich,_Langen_Foundation_--_2014_--_7405.jpg" rel="noopener" target="_blank">
-      Foto: Anil Öztas / Stadt Neuss (CC BY-SA 4.0)
-    </a>
   </section>
 
   <!-- PROYECTOS DESTACADOS -->

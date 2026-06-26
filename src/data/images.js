@@ -1,9 +1,6 @@
-// Foto real (no placeholder de IA) para el hero de portada: Fundación Langen
-// (Tadao Ando), Neuss, Alemania. Wikimedia Commons, CC BY-SA 4.0.
-// Atribución requerida: "Anil Öztas / Stadt Neuss".
-// https://commons.wikimedia.org/wiki/File:Neuss_(DE),_Raketenstation_Hombroich,_Langen_Foundation_--_2014_--_7405.jpg
-export const IMG_HERO =
-  'https://upload.wikimedia.org/wikipedia/commons/1/12/Neuss_%28DE%29%2C_Raketenstation_Hombroich%2C_Langen_Foundation_--_2014_--_7405.jpg';
+// La foto del hero de portada ahora es real, proporcionada por el cliente:
+// public/images/imageninicio.png (referenciada directamente como /images/...
+// en src/pages/index.astro, no como constante aquí).
 
 // Imágenes placeholder (arquitectura de lujo genérica) en lo que se sustituyen
 // por fotografía real del estudio. Cíclicas entre las distintas páginas.
