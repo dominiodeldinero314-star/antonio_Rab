@@ -44,27 +44,27 @@ import Layout from '../layouts/Layout.astro';
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <label class="text-xs font-sans font-semibold uppercase tracking-wide text-graphite mb-2 block">Nombre</label>
-              <input class="w-full rounded-full bg-offwhite border border-sand focus:ring-0 focus:border-gold px-6 py-3 transition-colors" name="nombre" placeholder="Tu nombre completo" required type="text" />
+              <input class="w-full rounded-none bg-offwhite border border-sand focus:ring-0 focus:border-gold px-6 py-3 transition-colors" name="nombre" placeholder="Tu nombre completo" required type="text" />
             </div>
             <div>
               <label class="text-xs font-sans font-semibold uppercase tracking-wide text-graphite mb-2 block">Email</label>
-              <input class="w-full rounded-full bg-offwhite border border-sand focus:ring-0 focus:border-gold px-6 py-3 transition-colors" name="email" placeholder="email@ejemplo.com" required type="email" />
+              <input class="w-full rounded-none bg-offwhite border border-sand focus:ring-0 focus:border-gold px-6 py-3 transition-colors" name="email" placeholder="email@ejemplo.com" required type="email" />
             </div>
           </div>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <label class="text-xs font-sans font-semibold uppercase tracking-wide text-graphite mb-2 block">Teléfono</label>
-              <input class="w-full rounded-full bg-offwhite border border-sand focus:ring-0 focus:border-gold px-6 py-3 transition-colors" name="telefono" placeholder="+34 600 000 000" type="tel" />
+              <input class="w-full rounded-none bg-offwhite border border-sand focus:ring-0 focus:border-gold px-6 py-3 transition-colors" name="telefono" placeholder="+34 600 000 000" type="tel" />
             </div>
             <div>
               <label class="text-xs font-sans font-semibold uppercase tracking-wide text-graphite mb-2 block">Ciudad</label>
-              <input class="w-full rounded-full bg-offwhite border border-sand focus:ring-0 focus:border-gold px-6 py-3 transition-colors" name="ciudad" placeholder="Murcia, Madrid..." type="text" />
+              <input class="w-full rounded-none bg-offwhite border border-sand focus:ring-0 focus:border-gold px-6 py-3 transition-colors" name="ciudad" placeholder="Murcia, Madrid..." type="text" />
             </div>
           </div>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <label class="text-xs font-sans font-semibold uppercase tracking-wide text-graphite mb-2 block">Tipo de proyecto</label>
-              <select class="w-full rounded-full bg-offwhite border border-sand focus:ring-0 focus:border-gold px-6 py-3 transition-colors" name="tipo_proyecto">
+              <select class="w-full rounded-none bg-offwhite border border-sand focus:ring-0 focus:border-gold px-6 py-3 transition-colors" name="tipo_proyecto">
                 <option>Vivienda nueva</option>
                 <option>Reforma integral</option>
                 <option>Interiorismo</option>
@@ -74,7 +74,7 @@ import Layout from '../layouts/Layout.astro';
             </div>
             <div>
               <label class="text-xs font-sans font-semibold uppercase tracking-wide text-graphite mb-2 block">Presupuesto aproximado</label>
-              <select class="w-full rounded-full bg-offwhite border border-sand focus:ring-0 focus:border-gold px-6 py-3 transition-colors" name="presupuesto">
+              <select class="w-full rounded-none bg-offwhite border border-sand focus:ring-0 focus:border-gold px-6 py-3 transition-colors" name="presupuesto">
                 <option>+100.000€</option>
                 <option>+300.000€</option>
                 <option>+500.000€</option>
@@ -84,9 +84,9 @@ import Layout from '../layouts/Layout.astro';
           </div>
           <div>
             <label class="text-xs font-sans font-semibold uppercase tracking-wide text-graphite mb-2 block">Mensaje</label>
-            <textarea class="w-full rounded-2xl bg-offwhite border border-sand focus:ring-0 focus:border-gold px-6 py-3 transition-colors" name="mensaje" placeholder="Cuéntanos un poco sobre tu idea..." required rows="4"></textarea>
+            <textarea class="w-full rounded-none bg-offwhite border border-sand focus:ring-0 focus:border-gold px-6 py-3 transition-colors" name="mensaje" placeholder="Cuéntanos un poco sobre tu idea..." required rows="4"></textarea>
           </div>
-          <button class="w-full rounded-full py-4 bg-gold text-ink font-sans font-semibold uppercase tracking-wide hover:bg-ink hover:text-offwhite transition-all duration-300" type="submit">
+          <button class="w-full rounded-none py-4 bg-gold text-ink font-sans font-semibold uppercase tracking-wide hover:bg-ink hover:text-offwhite transition-all duration-300" type="submit">
             Enviar consulta
           </button>
         </form>
