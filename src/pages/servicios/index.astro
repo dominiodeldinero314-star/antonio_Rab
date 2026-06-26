@@ -4,18 +4,21 @@ import ServiceCard from '../../components/ServiceCard.astro';
 import { services } from '../../data/services.js';
 ---
 
-<Layout description="Arquitectura residencial, viviendas de lujo, reformas integrales, interiorismo, espacios comerciales y dirección de obra." title="Servicios">
-  <section class="pt-40 pb-16 px-6 md:px-16 max-w-[1440px] mx-auto">
-    <span class="text-xs md:text-sm font-sans font-semibold uppercase tracking-[0.2em] text-gold mb-4 block fade-in-up">Servicios</span>
-    <h1 class="font-display text-4xl md:text-6xl leading-tight mb-6 max-w-2xl fade-in-up">Soluciones integrales de diseño</h1>
+<Layout
+  description="Arquitectura residencial, viviendas de lujo, reformas integrales, interiorismo, espacios comerciales y dirección de obra en Murcia, Madrid y Barcelona."
+  title="Servicios de Arquitectura e Interiorismo"
+>
+  <section class="pt-44 pb-20 px-6 md:px-16 max-w-[1440px] mx-auto">
+    <span class="text-xs md:text-sm font-sans font-semibold uppercase tracking-[0.25em] text-gold mb-5 block fade-in-up">Servicios</span>
+    <h1 class="font-display text-4xl md:text-6xl leading-tight mb-8 max-w-2xl fade-in-up">Arquitectura, interiorismo y reformas integrales</h1>
     <p class="text-graphite text-base md:text-lg max-w-xl leading-relaxed fade-in-up" style="transition-delay: 100ms;">
       Desde el primer boceto hasta la entrega de llaves, acompañamos cada proyecto con la misma exigencia técnica y estética.
     </p>
   </section>
 
-  <section class="px-6 md:px-16 max-w-[1440px] mx-auto pb-24 md:pb-32">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      {services.map((service, i) => <ServiceCard service={service} delay={i * 100} />)}
+  <section class="px-6 md:px-16 max-w-[1440px] mx-auto pb-28 md:pb-40">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-x-10 md:gap-y-16">
+      {services.map((service, i) => <ServiceCard delay={(i % 3) * 100} service={service} />)}
     </div>
   </section>
 </Layout>

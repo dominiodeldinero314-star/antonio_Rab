@@ -3,18 +3,26 @@ const { project, delay = 0 } = Astro.props;
 ---
 
 <a
-  class="group relative aspect-[4/3] rounded-3xl overflow-hidden fade-in-up shadow-sm block"
+  class="project-item group block fade-in-up"
+  data-category={project.category}
   href={`/proyectos/${project.slug}`}
   style={delay ? `transition-delay: ${delay}ms;` : undefined}
 >
-  <div
-    class="w-full h-full bg-cover bg-center transition-transform duration-1000 group-hover:scale-105"
-    style={`background-image: url('${project.image}')`}
-  >
+  <div class="relative aspect-[4/3] md:aspect-[16/10] overflow-hidden">
+    <div
+      class="w-full h-full bg-cover bg-center transition-transform duration-[1400ms] ease-out group-hover:scale-110"
+      style={`background-image: url('${project.image}')`}
+    >
+    </div>
+    <div class="absolute inset-0 bg-ink/0 group-hover:bg-ink/10 transition-colors duration-700"></div>
   </div>
-  <div class="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/10 to-transparent"></div>
-  <div class="absolute bottom-0 left-0 p-8 text-offwhite">
-    <p class="text-xs font-sans font-semibold uppercase tracking-wide text-gold mb-2">{project.category} · {project.location}</p>
-    <h3 class="font-display text-2xl">{project.name}</h3>
+  <div class="flex items-start justify-between gap-6 mt-6 md:mt-8">
+    <div>
+      <h3 class="font-display text-xl md:text-2xl mb-1 group-hover:text-gold transition-colors duration-300">{project.name}</h3>
+      <p class="text-xs md:text-sm font-sans uppercase tracking-wide text-graphite">{project.category} · {project.location}</p>
+    </div>
+    <span class="hidden sm:flex items-center justify-center w-11 h-11 rounded-full border border-ink/15 text-ink shrink-0 group-hover:border-gold group-hover:text-gold group-hover:translate-x-1 transition-all duration-300">
+      →
+    </span>
   </div>
 </a>

@@ -3,12 +3,21 @@ const { service, delay = 0 } = Astro.props;
 ---
 
 <a
-  class="group flex flex-col items-center text-center rounded-3xl bg-offwhite border border-sand p-10 hover:shadow-xl hover:-translate-y-1 transition-all fade-in-up block"
+  class="group block fade-in-up"
   href={`/servicios/${service.slug}`}
   style={delay ? `transition-delay: ${delay}ms;` : undefined}
 >
-  <span class="material-symbols-outlined text-4xl text-gold bg-gold/10 rounded-full p-5 mb-8 group-hover:scale-110 transition-transform">{service.icon}</span>
-  <h3 class="font-display text-2xl mb-4">{service.name}</h3>
-  <p class="text-graphite leading-relaxed mb-6">{service.excerpt}</p>
-  <span class="text-sm font-sans font-semibold uppercase tracking-wide text-gold group-hover:text-ink transition-colors">Saber más →</span>
+  <div class="relative aspect-[4/3] overflow-hidden mb-6">
+    <div
+      class="w-full h-full bg-cover bg-center transition-transform duration-[1400ms] ease-out group-hover:scale-110"
+      style={`background-image: url('${service.image}')`}
+    >
+    </div>
+    <div class="absolute inset-0 bg-ink/0 group-hover:bg-ink/10 transition-colors duration-700"></div>
+  </div>
+  <h3 class="font-display text-2xl mb-3 group-hover:text-gold transition-colors duration-300">{service.name}</h3>
+  <p class="text-graphite leading-relaxed mb-4">{service.excerpt}</p>
+  <span class="text-sm font-sans font-semibold uppercase tracking-wide text-gold inline-block group-hover:translate-x-1 transition-transform duration-300">
+    Saber más →
+  </span>
 </a>
