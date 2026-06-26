@@ -3,10 +3,12 @@ import { IMG_VILLA, IMG_LIVING, IMG_FACADE } from './images.js';
 export const categories = ['Viviendas', 'Reformas', 'Interiorismo', 'Comercial'];
 
 // Nota: solo hay 3 fotos placeholder reales disponibles (IMG_VILLA, IMG_LIVING,
-// IMG_FACADE) para 9 proyectos. La asignación de abajo está calculada a mano
-// para que nunca se repita la misma foto en dos proyectos contiguos -ni en el
-// grid de 3 columnas de /proyectos, ni en la pila de "destacados" de la home-.
-// Si se añaden fotos reales del cliente, esta restricción ya no aplica.
+// IMG_FACADE) para 9 proyectos. La asignación de abajo es un "cuadrado latino"
+// calculado con un script (cada fila Y cada columna del grid de 3 columnas de
+// /proyectos usa las 3 fotos sin repetir ninguna), y además evita que el
+// último "destacado" de la home coincida con el primer servicio que viene
+// justo después en el scroll. Si se añaden fotos reales del cliente, esta
+// restricción ya no aplica.
 export const projects = [
   {
     slug: 'casa-mar-azul',
@@ -27,8 +29,8 @@ export const projects = [
     location: 'Murcia',
     category: 'Viviendas',
     featured: false,
-    image: IMG_LIVING,
-    gallery: [IMG_LIVING, IMG_FACADE, IMG_VILLA],
+    image: IMG_FACADE,
+    gallery: [IMG_FACADE, IMG_LIVING, IMG_VILLA],
     excerpt: 'Villa de nueva construcción que combina volúmenes puros con jardines mediterráneos.',
     story:
       'Villa Albaida explora la relación entre arquitectura y paisajismo a través de volúmenes limpios que se asientan con calma sobre el terreno. El proyecto prioriza la orientación solar y la ventilación cruzada, reduciendo la necesidad de climatización artificial sin renunciar al confort.\n\nLos interiores se resuelven con una paleta de materiales cálida y atemporal, pensada para envejecer con elegancia.',
@@ -40,8 +42,8 @@ export const projects = [
     location: 'Madrid',
     category: 'Viviendas',
     featured: false,
-    image: IMG_FACADE,
-    gallery: [IMG_FACADE, IMG_VILLA, IMG_LIVING],
+    image: IMG_LIVING,
+    gallery: [IMG_LIVING, IMG_VILLA, IMG_FACADE],
     excerpt: 'Reforma integral de un ático en el centro de Madrid con terraza panorámica.',
     story:
       'Este ático en el corazón de Madrid se transformó por completo para liberar espacio, luz y vistas. Se eliminaron divisiones innecesarias para crear una planta diáfana que culmina en una terraza concebida como una estancia más de la vivienda.\n\nEl resultado es un espacio sobrio y luminoso, donde cada material y cada pieza de mobiliario ha sido seleccionada con criterio.',
@@ -92,8 +94,8 @@ export const projects = [
     location: 'Madrid',
     category: 'Interiorismo',
     featured: false,
-    image: IMG_LIVING,
-    gallery: [IMG_LIVING, IMG_VILLA, IMG_FACADE],
+    image: IMG_FACADE,
+    gallery: [IMG_FACADE, IMG_VILLA, IMG_LIVING],
     excerpt: 'Interiorismo completo de un apartamento clásico junto al Parque del Retiro.',
     story:
       'En este apartamento de Madrid el reto consistía en actualizar un interior clásico sin perder su elegancia original. El resultado combina molduras y carpinterías recuperadas con mobiliario contemporáneo, iluminación cálida y piezas de autor.',
@@ -105,8 +107,8 @@ export const projects = [
     location: 'Madrid',
     category: 'Comercial',
     featured: true,
-    image: IMG_VILLA,
-    gallery: [IMG_VILLA, IMG_FACADE, IMG_LIVING],
+    image: IMG_LIVING,
+    gallery: [IMG_LIVING, IMG_FACADE, IMG_VILLA],
     excerpt: 'Diseño de espacio de oficinas boutique para una firma de servicios profesionales.',
     story:
       'Oficinas Aurora traslada los principios de calidez y atención al detalle del diseño residencial a un entorno de trabajo. El espacio combina zonas de concentración, reunión y descanso bajo una misma identidad visual coherente con la marca del cliente.',
@@ -118,8 +120,8 @@ export const projects = [
     location: 'Barcelona',
     category: 'Comercial',
     featured: false,
-    image: IMG_FACADE,
-    gallery: [IMG_FACADE, IMG_LIVING, IMG_VILLA],
+    image: IMG_VILLA,
+    gallery: [IMG_VILLA, IMG_LIVING, IMG_FACADE],
     excerpt: 'Interiorismo comercial para una tienda concepto en el centro de Barcelona.',
     story:
       'Boutique Lumière buscaba un espacio comercial que funcionara como experiencia de marca. La iluminación, los materiales y el recorrido se diseñaron para guiar al visitante y poner en valor cada producto expuesto.',
