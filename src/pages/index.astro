@@ -25,15 +25,19 @@ const featuredProjects = getFeaturedProjects();
   <!-- HERO -->
   <section class="relative h-screen w-full overflow-hidden">
     <div class="absolute inset-0 z-0">
-      <div class="w-full h-full bg-cover bg-right md:bg-center ken-burns" style={`background-image: url('${IMG_VILLA}')`}></div>
+      <div class="w-full h-full bg-cover bg-left md:bg-center ken-burns" style={`background-image: url('${IMG_VILLA}')`}></div>
       <div class="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/30 to-ink/10"></div>
       <div class="absolute inset-0 bg-gradient-to-r from-ink/55 via-ink/10 to-transparent"></div>
     </div>
+    <div class="absolute top-28 md:top-32 inset-x-0 z-10 text-center enter-up">
+      <span class="text-xs md:text-sm font-sans font-semibold uppercase tracking-[0.3em] text-offwhite/80">Murcia · Madrid · Barcelona</span>
+    </div>
     <div class="relative z-10 flex flex-col justify-center items-center text-center md:items-start md:text-left h-full px-6 md:px-16 max-w-[1440px] mx-auto">
       <h1 class="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl leading-[1.1] sm:leading-[1.05] tracking-tight text-offwhite max-w-3xl mb-10 text-left enter-up">
-        <span class="block">Arquitectura</span>
-        <span class="block">que transforma</span>
-        <span class="block">espacios.</span>
+        <span class="block">Arquitectura que</span>
+        <span class="block">transforma espacios</span>
+        <span class="block">en experiencias</span>
+        <span class="block">únicas.</span>
       </h1>
       <div class="flex flex-col items-center gap-6 sm:flex-row sm:gap-10 mt-10 enter-up" style="animation-delay: 200ms;">
         <a class="inline-flex items-center rounded-none border border-offwhite px-7 py-3.5 text-offwhite font-sans font-semibold uppercase tracking-wide text-sm hover:bg-offwhite hover:text-ink transition-all duration-300" href="/contacto">
