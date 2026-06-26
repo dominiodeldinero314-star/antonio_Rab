@@ -6,7 +6,7 @@ import { getFeaturedProjects } from '../data/projects.js';
 import { services } from '../data/services.js';
 import { testimonials } from '../data/testimonials.js';
 import SpainSvgMap from '../components/SpainSvgMap.astro';
-import { IMG_VILLA } from '../data/images.js';
+import { IMG_HERO } from '../data/images.js';
 
 const featuredProjects = getFeaturedProjects();
 ---
@@ -25,9 +25,9 @@ const featuredProjects = getFeaturedProjects();
   <!-- HERO -->
   <section class="relative h-screen w-full overflow-hidden">
     <div class="absolute inset-0 z-0">
-      <div class="w-full h-full bg-cover bg-center ken-burns" style={`background-image: url('${IMG_VILLA}')`}></div>
-      <div class="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/15 to-ink/15"></div>
-      <div class="absolute inset-0" style="background: radial-gradient(ellipse at center, transparent 45%, rgba(17,17,17,0.45) 100%);"></div>
+      <div class="w-full h-full bg-cover bg-center ken-burns" style={`background-image: url('${IMG_HERO}')`}></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/35 to-ink/10"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-ink/65 via-ink/20 to-transparent"></div>
     </div>
     <div class="relative z-10 flex flex-col justify-center items-center text-center md:items-start md:text-left h-full px-6 md:px-16 max-w-[1440px] mx-auto">
       <h1 class="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl leading-[1.1] sm:leading-[1.05] tracking-tight text-offwhite max-w-3xl mb-12 enter-up">
@@ -46,6 +46,9 @@ const featuredProjects = getFeaturedProjects();
       <span class="text-[10px] font-sans uppercase tracking-[0.3em]">Descubre</span>
       <span class="w-px h-9 bg-offwhite/40"></span>
     </div>
+    <a class="absolute bottom-3 right-4 text-offwhite/40 hover:text-offwhite/70 text-[10px] font-sans transition-colors duration-300" href="https://commons.wikimedia.org/wiki/File:Neuss_(DE),_Raketenstation_Hombroich,_Langen_Foundation_--_2014_--_7405.jpg" rel="noopener" target="_blank">
+      Foto: Anil Öztas / Stadt Neuss (CC BY-SA 4.0)
+    </a>
   </section>
 
   <!-- PROYECTOS DESTACADOS -->
