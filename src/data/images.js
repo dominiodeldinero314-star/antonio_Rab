@@ -2,6 +2,9 @@
 // public/images/imageninicio.png (referenciada directamente como /images/...
 // en src/pages/index.astro, no como constante aquí).
 
+// Foto real del proyecto "Loft Born", proporcionada por el cliente.
+export const IMG_LOFTBORN = '/images/loftborn.png';
+
 // Imágenes placeholder (arquitectura de lujo genérica) en lo que se sustituyen
 // por fotografía real del estudio. Cíclicas entre las distintas páginas.
 export const IMG_VILLA =

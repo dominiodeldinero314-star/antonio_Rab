@@ -1,14 +1,16 @@
-import { IMG_VILLA, IMG_LIVING, IMG_FACADE } from './images.js';
+import { IMG_VILLA, IMG_LIVING, IMG_FACADE, IMG_LOFTBORN } from './images.js';
 
 export const categories = ['Viviendas', 'Reformas', 'Interiorismo', 'Comercial'];
 
-// Nota: solo hay 3 fotos placeholder reales disponibles (IMG_VILLA, IMG_LIVING,
-// IMG_FACADE) para 9 proyectos. La asignación de abajo es un "cuadrado latino"
-// calculado con un script (cada fila Y cada columna del grid de 3 columnas de
-// /proyectos usa las 3 fotos sin repetir ninguna), y además evita que el
-// último "destacado" de la home coincida con el primer servicio que viene
-// justo después en el scroll. Si se añaden fotos reales del cliente, esta
-// restricción ya no aplica.
+// Nota: solo hay 3 fotos placeholder (IMG_VILLA, IMG_LIVING, IMG_FACADE) para
+// los proyectos que aún no tienen foto real. Loft Born ya usa una foto real
+// del cliente (IMG_LOFTBORN) y queda fuera de ese reparto. La asignación de
+// abajo es un "cuadrado latino" calculado con un script (cada fila Y cada
+// columna del grid de 3 columnas de /proyectos usa las 3 fotos sin repetir
+// ninguna, ignorando la celda de Loft Born que nunca colisiona), y además
+// evita que el último "destacado" de la home coincida con el primer servicio
+// que viene justo después en el scroll. Si se añaden más fotos reales del
+// cliente, esta restricción ya no aplica para esos proyectos.
 export const projects = [
   {
     slug: 'casa-mar-azul',
@@ -29,8 +31,8 @@ export const projects = [
     location: 'Murcia',
     category: 'Viviendas',
     featured: false,
-    image: IMG_FACADE,
-    gallery: [IMG_FACADE, IMG_LIVING, IMG_VILLA],
+    image: IMG_LIVING,
+    gallery: [IMG_LIVING, IMG_VILLA, IMG_FACADE],
     excerpt: 'Villa de nueva construcción que combina volúmenes puros con jardines mediterráneos.',
     story:
       'Villa Albaida explora la relación entre arquitectura y paisajismo a través de volúmenes limpios que se asientan con calma sobre el terreno. El proyecto prioriza la orientación solar y la ventilación cruzada, reduciendo la necesidad de climatización artificial sin renunciar al confort.\n\nLos interiores se resuelven con una paleta de materiales cálida y atemporal, pensada para envejecer con elegancia.',
@@ -42,8 +44,8 @@ export const projects = [
     location: 'Madrid',
     category: 'Viviendas',
     featured: false,
-    image: IMG_LIVING,
-    gallery: [IMG_LIVING, IMG_VILLA, IMG_FACADE],
+    image: IMG_FACADE,
+    gallery: [IMG_FACADE, IMG_VILLA, IMG_LIVING],
     excerpt: 'Reforma integral de un ático en el centro de Madrid con terraza panorámica.',
     story:
       'Este ático en el corazón de Madrid se transformó por completo para liberar espacio, luz y vistas. Se eliminaron divisiones innecesarias para crear una planta diáfana que culmina en una terraza concebida como una estancia más de la vivienda.\n\nEl resultado es un espacio sobrio y luminoso, donde cada material y cada pieza de mobiliario ha sido seleccionada con criterio.',
@@ -55,8 +57,8 @@ export const projects = [
     location: 'Murcia',
     category: 'Interiorismo',
     featured: true,
-    image: IMG_LIVING,
-    gallery: [IMG_LIVING, IMG_VILLA, IMG_FACADE],
+    image: IMG_FACADE,
+    gallery: [IMG_FACADE, IMG_VILLA, IMG_LIVING],
     excerpt: 'Proyecto de interiorismo integral para una vivienda de descanso frente al mar.',
     story:
       'Suite Mediterránea es un ejercicio de interiorismo pensado para el descanso: texturas naturales, una paleta de color serena y mobiliario a medida que dialoga con la luz mediterránea.\n\nCada estancia se concibió como una experiencia sensorial propia, coherente con el resto de la vivienda pero con personalidad individual.',
@@ -81,8 +83,8 @@ export const projects = [
     location: 'Barcelona',
     category: 'Reformas',
     featured: true,
-    image: IMG_FACADE,
-    gallery: [IMG_FACADE, IMG_VILLA, IMG_LIVING],
+    image: IMG_LOFTBORN,
+    gallery: [IMG_LOFTBORN, IMG_VILLA, IMG_LIVING],
     excerpt: 'Reforma integral de una antigua nave industrial convertida en vivienda loft.',
     story:
       'Loft Born conserva el carácter industrial original del edificio —ladrillo visto, alturas generosas, estructura metálica— y lo combina con una intervención contemporánea que aporta calidez y funcionalidad doméstica.\n\nLa nueva distribución resuelve las necesidades de una vivienda actual sin renunciar a la identidad y la memoria del espacio original.',
@@ -94,8 +96,8 @@ export const projects = [
     location: 'Madrid',
     category: 'Interiorismo',
     featured: false,
-    image: IMG_FACADE,
-    gallery: [IMG_FACADE, IMG_VILLA, IMG_LIVING],
+    image: IMG_LIVING,
+    gallery: [IMG_LIVING, IMG_VILLA, IMG_FACADE],
     excerpt: 'Interiorismo completo de un apartamento clásico junto al Parque del Retiro.',
     story:
       'En este apartamento de Madrid el reto consistía en actualizar un interior clásico sin perder su elegancia original. El resultado combina molduras y carpinterías recuperadas con mobiliario contemporáneo, iluminación cálida y piezas de autor.',
@@ -107,8 +109,8 @@ export const projects = [
     location: 'Madrid',
     category: 'Comercial',
     featured: true,
-    image: IMG_LIVING,
-    gallery: [IMG_LIVING, IMG_FACADE, IMG_VILLA],
+    image: IMG_FACADE,
+    gallery: [IMG_FACADE, IMG_VILLA, IMG_LIVING],
     excerpt: 'Diseño de espacio de oficinas boutique para una firma de servicios profesionales.',
     story:
       'Oficinas Aurora traslada los principios de calidez y atención al detalle del diseño residencial a un entorno de trabajo. El espacio combina zonas de concentración, reunión y descanso bajo una misma identidad visual coherente con la marca del cliente.',
