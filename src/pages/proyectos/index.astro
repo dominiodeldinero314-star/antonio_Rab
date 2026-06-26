@@ -8,7 +8,7 @@ import { projects, categories } from '../../data/projects.js';
   description="Proyectos de arquitectura residencial, viviendas de lujo, reformas integrales e interiorismo realizados en Murcia, Madrid, Barcelona y el resto de España."
   title="Proyectos de Arquitectura y Viviendas de Lujo"
 >
-  <section class="pt-44 pb-20 px-6 md:px-16 max-w-[1440px] mx-auto">
+  <section class="pt-32 pb-20 px-6 md:px-16 max-w-[1440px] mx-auto">
     <span class="text-xs md:text-sm font-sans font-semibold uppercase tracking-[0.25em] text-gold mb-5 block fade-in-up">Portfolio</span>
     <h1 class="font-display text-4xl md:text-6xl leading-tight mb-8 max-w-2xl fade-in-up">Proyectos de arquitectura y viviendas de lujo</h1>
     <p class="text-graphite text-base md:text-lg max-w-xl leading-relaxed fade-in-up" style="transition-delay: 100ms;">
@@ -17,7 +17,7 @@ import { projects, categories } from '../../data/projects.js';
   </section>
 
   <section class="px-6 md:px-16 max-w-[1440px] mx-auto mb-16">
-    <div class="flex flex-wrap justify-center gap-3 sm:justify-start" id="filters">
+    <div class="flex flex-wrap gap-3" id="filters">
       <button class="filter-btn rounded-none px-6 py-2 text-sm font-sans font-semibold uppercase tracking-wide bg-ink text-offwhite" data-filter="Todos">Todos</button>
       {categories.map((cat) => (
         <button class="filter-btn rounded-none px-6 py-2 text-sm font-sans font-semibold uppercase tracking-wide bg-sand text-ink hover:bg-gold hover:text-ink transition-all duration-300" data-filter={cat}>
@@ -28,7 +28,7 @@ import { projects, categories } from '../../data/projects.js';
   </section>
 
   <section class="px-6 md:px-16 max-w-[1440px] mx-auto pb-28 md:pb-40">
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-x-10 gap-y-16 md:gap-y-20" id="projects-grid">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-16 md:gap-y-20" id="projects-grid">
       {projects.map((project, i) => <ProjectCard delay={(i % 3) * 100} project={project} />)}
     </div>
   </section>
