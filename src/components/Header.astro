@@ -1,9 +1,9 @@
 ---
 const { transparent = false } = Astro.props;
 
-const baseClasses = 'fixed top-0 inset-x-0 z-50 transition-all duration-300 h-20';
-const transparentClasses = 'bg-transparent text-offwhite';
-const scrolledClasses = 'bg-cream/95 backdrop-blur-md border-b border-sand text-ink shadow-sm';
+const baseClasses = 'fixed top-0 inset-x-0 z-50 transition-all duration-300';
+const transparentClasses = 'bg-transparent text-offwhite h-20';
+const scrolledClasses = 'bg-cream/95 backdrop-blur-md border-b border-sand text-ink shadow-sm h-16';
 ---
 
 <header
@@ -41,8 +41,8 @@ const scrolledClasses = 'bg-cream/95 backdrop-blur-md border-b border-sand text-
 
 <script>
   const header = document.getElementById('site-header');
-  const transparentClasses = ['bg-transparent', 'text-offwhite'];
-  const scrolledClasses = ['bg-cream/95', 'backdrop-blur-md', 'border-b', 'border-sand', 'text-ink', 'shadow-sm'];
+  const transparentClasses = ['bg-transparent', 'text-offwhite', 'h-20'];
+  const scrolledClasses = ['bg-cream/95', 'backdrop-blur-md', 'border-b', 'border-sand', 'text-ink', 'shadow-sm', 'h-16'];
   let isTransparent = false;
 
   function applyScrolled(scrolled) {
