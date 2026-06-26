@@ -6,6 +6,7 @@ import { getFeaturedProjects } from '../data/projects.js';
 import { services } from '../data/services.js';
 import { testimonials } from '../data/testimonials.js';
 import SpainSvgMap from '../components/SpainSvgMap.astro';
+import { IMG_VILLA } from '../data/images.js';
 
 const featuredProjects = getFeaturedProjects();
 ---
@@ -24,7 +25,7 @@ const featuredProjects = getFeaturedProjects();
   <!-- HERO -->
   <section class="relative h-screen w-full overflow-hidden">
     <div class="absolute inset-0 z-0">
-      <div class="w-full h-full bg-cover bg-right md:bg-center ken-burns" style="background-image: url('/images/fotoinicio.png');"></div>
+      <div class="w-full h-full bg-cover bg-right md:bg-center ken-burns" style={`background-image: url('${IMG_VILLA}')`}></div>
       <div class="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/30 to-ink/10"></div>
       <div class="absolute inset-0 bg-gradient-to-r from-ink/55 via-ink/10 to-transparent"></div>
     </div>
@@ -53,7 +54,7 @@ const featuredProjects = getFeaturedProjects();
   </section>
 
   <!-- PROYECTOS DESTACADOS -->
-  <section class="py-28 md:py-44" id="proyectos">
+  <section class="pt-16 md:pt-24 pb-28 md:pb-44" id="proyectos">
     <div class="px-6 md:px-16 max-w-[1440px] mx-auto mb-16 md:mb-24 flex flex-col sm:flex-row sm:justify-between sm:items-end gap-6 fade-in-up">
       <div>
         <span class="text-xs md:text-sm font-sans font-semibold uppercase tracking-[0.25em] text-gold mb-5 block">Selección</span>
